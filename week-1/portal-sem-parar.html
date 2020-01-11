@@ -4,59 +4,82 @@
 
     <head>
         <title>Minha Conta - Home Pós</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="footer.css">
     </head>
 
     <body>
-        <nav>
-            <img src="images/logo.svg" alt="Logo Sem Parar" height="50">
-            <ul>
-                <li><a href="#" target="_blank">Inicio</a></li>
-                <li><a href="#" target="_blank">Meu Extrato</a></li>
-                <li><a href="#" target="_blank">Meus Veículos</a></li>
-                <li><a href="#" target="_blank">Serviços Disponíveis</a></li>
-                <li><a href="#" target="_blank">Consultar Protocolo</a></li>
-                <li><a href="#" target="_blank">Usuário Logado</a></li>
-            </ul>
-        </nav>
 
         <header>
-            <ul>
+            <nav>
+                <ul>
+                    <li><img src="images/logo.svg" alt="Logo Sem Parar" height="50"></li>
+                    <li><a href="#" target="_blank">Inicio</a></li>
+                    <li><a href="#" target="_blank">Meu <br>Extrato</a></li>
+                    <li><a href="#" target="_blank">Meus <br>Veículos</a></li>
+                    <li><a href="#" target="_blank">Serviços <br>Disponíveis</a></li>
+                    <li><a href="#" target="_blank">Consultar <br>Protocolo</a></li>
+                    <li><a href="#" target="_blank">Imagem <br>Carro</a></li>
+                    <li><a href="#" target="_blank">Usuário <br>Logado</a></li>
+                </ul>
+            </nav>
+
+            <ul id="container-fatura">
                 <li><H3>FATURA ABERTA</H3></li>
                 <li><a href="#">Ver Extrato</a></li>
-                <li><a href="#">Pedágio</a></li>
-                <li><a href="#">Estacionamento</a></li>
-                <li><a href="#">Abastecimento</a></li>
-                <li><a href="#">Outros</a></li>
+                <div id="details">
+                    <div id="toll">
+                        <li><a href="#">Pedágio</a></li>
+                    </div>
+                    <div id="parking">
+                        <li><a href="#">Estacionamento</a></li>
+                    </div>
+                    <div id="fuel">
+                        <li><a href="#">Abastecimento</a></li>
+                    </div>
+                    <div id="others">
+                        <li><a href="#">Outros</a></li>
+                    </div>
+                </div>
             </ul>
 
         </header>
 
-        <section>
-            Status
-            <div>
-                <p><b>Seu Sem Parar está <span style="color: green;">ativo</span>, é só usar :)</b></p>
-                <p><a href="#">Ver Detalhes</a></p>
-            </div>
-        </section>
+        <main id="main">
+            <section id="sc-status">
+                <H3>Status</H3>
+                <div>
+                    <p><b>Seu Sem Parar está <span style="color: green;">ativo</span>, é só usar :)</b></p>
+                    <p><a href="#">Ver Detalhes</a></p>
+                </div>
+                <h3>Acesso rápido</h3>
+                <p><a href="#">Pagar <br>agora</a></p>
+                <p><a href="#">Alterar seus dados <br>de pagamento</a></p>
+            </section>
 
-        <section>
-            Faturas
-            <div>
-                <ul>
-                    <li>Jan/2020 - Fechada</li>
-                    <li>Dez/2019 - Fechada</li>
-                    <li>Nov/2019 - Fechada</li>
-                    <p><a href="#">Ver Faturas Anteriores</a></p>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <img src="images/img1.jpg" alt="Baixe o aplicativo">
-        </section>
+            <section id="sc-faturas">
+                <h3>Faturas</h3>
+                <div>
+                    <ul>
+                        <li>Jan/2020 - Fechada</li>
+                        <li>Dez/2019 - Fechada</li>
+                        <li>Nov/2019 - Fechada</li>
+                        <p><a href="#">Ver Faturas Anteriores</a></p>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="sc-prop">
+                <img src="images/img1.jpg" alt="Baixe o aplicativo">
+            </section>
+        </main>
     </body>
 
     <footer>
-        <a href="#"> Entenda seu extrato</a>
+        <ul>
+            <li><a href="#"> Entenda seu extrato</a></li>
+            <li><a href="#"> Política de Privacidade e Segurança</a></li>
+        </ul>
     </footer>
 </html>
