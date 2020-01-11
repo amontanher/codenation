@@ -3,11 +3,17 @@ footer{
     width: 100%;
     height: 5em;
     color: white;
-    position: fixed;
+    /* position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
+    font-size: 10px;
 }
 
 footer a:visited{
     color: white;
+}
+
+footer ul li{
+    display: inline;
+    margin: 10px;
 }
