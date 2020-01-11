@@ -1,9 +1,21 @@
-body a{
-    text-decoration: none;
-    font-family: roboto, sans-serif;
+*{
+    font-family: Roboto, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body ul{
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
     list-style: none;
 }
 
@@ -13,11 +25,13 @@ nav{
 
 nav ul li{
     display: inline;
-    margin: 30px;
+    margin: 40px;
 }
 
 nav ul li a{
     display: inline-block;
+    color: #8e8e93;
+    padding-bottom: 10px;
 }
 
 #container-fatura{
@@ -25,36 +39,89 @@ nav ul li a{
     padding: 10px;
 }
 
+#container-fatura ul li{
+    display: inline;
+}
+
+#container-fatura ul li a{
+    display: inline-block;
+}
+
 #container-fatura h3{
-    background-color: ;
+    color: #8e8e93;
 }
 
 #details{
     background-color: white;
 }
 
-#main{
+main{
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 0;
 }
 
 section{
-    height: 50px;
-    width: 320px;
+    height: 290px;
+    width: 360px;
     background-color: white;
-    margin: 2em;
-    border: 3em;
+    margin:30px;
+    border-radius: 5px;
     padding: 1em;
+}
+
+main #cards{
+    margin:15px;
+}
+main #card-pay{
     float: left;
 }
 
-#sc-faturas{
-
+#details ul{
+    display:inline;
 }
 
-#sc-status{
-
+#details ul li{
+    display: inline-block;
 }
 
-#sc-prop{
+#sc-prop img{
+    border-radius: 10px;
+}
 
+.red-btn{
+    color: #d60b52;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+}
+
+.red-btn:hover{
+    background-color:#d60b52;
+    color: white;
+    cursor: pointer;
+}
+
+#status-detail p{
+    font-size: 25px;
+    text-align: center;
+}
+
+#container-fatura button{
+    color: white;
+    padding: 5px 50px 5px 50px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+}
+
+#container-fatura button:hover{
+    background-color:white;
+    color: black;
+    cursor: pointer;
 }

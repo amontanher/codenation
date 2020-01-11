@@ -20,42 +20,43 @@
                     <li><a href="#" target="_blank">Meus <br>Veículos</a></li>
                     <li><a href="#" target="_blank">Serviços <br>Disponíveis</a></li>
                     <li><a href="#" target="_blank">Consultar <br>Protocolo</a></li>
-                    <li><a href="#" target="_blank">Imagem <br>Carro</a></li>
-                    <li><a href="#" target="_blank">Usuário <br>Logado</a></li>
+                    <li><a href="#" target="_blank"><img src="images/car.png" alt="Meu carro" height="40"></a></li>
+                    <li><a href="#" target="_blank">ALESSANDRA<br>MONTANHER</a></li>
+                    <li><img src="images/profile.png" alt="Acessar Perfil" height="30"></li>
                 </ul>
             </nav>
 
             <ul id="container-fatura">
-                <li><H3>FATURA ABERTA</H3></li>
-                <li><a href="#">Ver Extrato</a></li>
-                <div id="details">
-                    <div id="toll">
-                        <li><a href="#">Pedágio</a></li>
-                    </div>
-                    <div id="parking">
-                        <li><a href="#">Estacionamento</a></li>
-                    </div>
-                    <div id="fuel">
-                        <li><a href="#">Abastecimento</a></li>
-                    </div>
-                    <div id="others">
-                        <li><a href="#">Outros</a></li>
-                    </div>
-                </div>
+                <li><h3>FATURA <br>ABERTA</h3></li>
+                <li><button>Ver Extrato</button></li>
+                <!-- <div id="details">
+                    <li><a href="#">Pedágio</a></li>
+                    <li><a href="#">Estacionamento</a></li>
+                    <li><a href="#">Abastecimento</a></li>
+                    <li><a href="#">Outros</a></li>
+                </div> -->
             </ul>
 
         </header>
 
         <main id="main">
             <section id="sc-status">
-                <H3>Status</H3>
-                <div>
+                <div id="status-detail">
+                    <h3>Status</h3>
                     <p><b>Seu Sem Parar está <span style="color: green;">ativo</span>, é só usar :)</b></p>
-                    <p><a href="#">Ver Detalhes</a></p>
+                    <button class="red-btn">Ver Detalhes</button>
                 </div>
-                <h3>Acesso rápido</h3>
-                <p><a href="#">Pagar <br>agora</a></p>
-                <p><a href="#">Alterar seus dados <br>de pagamento</a></p>
+                <div id="quick-access">
+                    <h3>Acesso rápido</h3>
+                    <div id="cards">
+                        <div id="card-pay">
+                            <p><a href="#">Pagar <br>agora</a></p>
+                        </div>
+                        <div id="card-update">
+                            <p><a href="#">Alterar seus dados <br>de pagamento</a></p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="sc-faturas">
@@ -65,13 +66,13 @@
                         <li>Jan/2020 - Fechada</li>
                         <li>Dez/2019 - Fechada</li>
                         <li>Nov/2019 - Fechada</li>
-                        <p><a href="#">Ver Faturas Anteriores</a></p>
+                        <button class="red-btn">Ver Faturas Anteriores</button>
                     </ul>
                 </div>
             </section>
 
             <section id="sc-prop">
-                <img src="images/img1.jpg" alt="Baixe o aplicativo">
+                <a href="#"><img src="images/img1.jpg" alt="Baixe o aplicativo"></a>
             </section>
         </main>
     </body>
