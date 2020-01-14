@@ -36,15 +36,31 @@ nav ul li a{
 
 #container-fatura{
     background-color: #505050;
-    padding: 10px 0px 10px 100px;
+    padding: 25px 0 40px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
 }
 
 #container-fatura h3{
     color: #8e8e93;
 }
 
+#fatura-open{
+    margin-left: 100px;
+}
+
+#fatura-details{
+    margin-left: 70px;
+    width: 350px;
+}
+
 #details{
     background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width:100%;
+    margin-left: 50px;
 }
 
 main{
