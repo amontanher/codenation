@@ -64,13 +64,6 @@ section{
     padding: 1em;
 }
 
-main #cards{
-    margin:15px;
-}
-main #card-pay{
-    float: left;
-}
-
 #details ul{
     display:inline;
 }
@@ -116,4 +109,33 @@ main #card-pay{
     background-color:white;
     color: black;
     cursor: pointer;
+}
+
+#cards{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#card-pay{
+    background-color: #DE7A9F;
+    border-radius: 5px;
+    width: 150px;
+    height: 100px;
+}
+
+#card-update{
+    background-color: #73C8CA;
+    border-radius: 5px;
+    width: 150px;
+    height: 100px;
+}
+
+#cards a{
+    color: white;
+}
+
+#cards p{
+    padding-left: 5px;
+    padding-top: 5px;
 }
