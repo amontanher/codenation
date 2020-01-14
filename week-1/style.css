@@ -61,6 +61,13 @@ nav ul li a{
     border-bottom-left-radius: 10px;
     width:100%;
     margin-left: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+}
+
+#details a{
+    color: red;
 }
 
 main{
