@@ -116,10 +116,7 @@ section{
     cursor: pointer;
 }
 
-#status-detail p{
-    font-size: 25px;
-    text-align: center;
-}
+
 
 #container-fatura button{
     color: white;
@@ -163,4 +160,12 @@ section{
 #cards p{
     padding-left: 5px;
     padding-top: 5px;
+}
+
+#status-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
 }
