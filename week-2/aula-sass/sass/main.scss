@@ -1,0 +1,107 @@
+// definir variável basta usar o simbolo $ seguido do nome dar var
+
+$primary: blue;
+$secondary: grey;
+$danger: red;
+$info: whitesmoke;
+$columns: 12;
+$width: 100px;
+$width-large: $width*5;
+$main-fonts: Arial, sans-serif;
+$font-size: 20px;
+$default: black;
+$colors:(
+    1:blue,
+    2:red,
+    3:green
+);
+
+@mixin box-shadow($axis-x, $axis-y, $blur, $color) {
+    -webkit-box-shadow: $axis-x $axis-y $blur $color;
+    -moz-box-shadow: $axis-x $axis-y $blur $color;
+    -ms-box-shadow: $axis-x $axis-y $blur $color;
+}
+
+@mixin text-color($number){
+    @if $number == 1 {
+        color: $danger
+    }
+    @else if $number == 2{
+        color: $primary
+    }
+    @else{
+        color: $default
+    }
+}
+
+body{
+    background-color: $info;
+    font-family: $main-fonts;
+}
+
+// Section Header
+//Aninhando (nest) uma regra para dentro da outra. filhos diretos
+.main{
+    background-color: $danger;
+    @include box-shadow(10px, 5px, 5px, black);
+    h1{
+        font-size: $font-size*6;
+    }
+
+    .main-content{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+
+        li{
+            padding: 0 10px;
+            @include text-color(2);
+
+            &:hover{
+                @include text-color(1);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4{
+    #menu-#{$i}{
+        font-size: 15px*$i
+    }
+}
+
+@each $key, $color in $colors {
+    #box-#{$key}{
+        background-color: $color;
+    }
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+
+    div{
+        background-color: $primary;
+    }
+}
+
+$count: 1;
+
+@while $count < 4 {
+    #box-#{$count}{
+        width:100px * $count;
+        height: 100px * $count;
+    }
+    $count: $count + 1;
+}
