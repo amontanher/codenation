@@ -5,6 +5,37 @@
     <title>Cadastro de Produto</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Insira um produto</h1>
+        <section>
+            <form>
+                <div class="form-group">
+                    <label for="produto">Produto</label>
+                    <input class="form-control" type="text" name="produto" id="">
+                </div>
 
+                <div class="form-group">
+                    <label for="valor">Valor</label>
+                    <input class="form-control" type="number" name="valor" id="">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </section>
+
+        <section>
+            <h1>Produtos Cadastrados</h1>
+            <button>Deletar todos os produtos</button>
+            <table class="table table-bordered col-sm-4 mt-3">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Produto</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
