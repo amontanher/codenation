@@ -2,21 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
     <title>Cadastro de Produto</title>
 </head>
 <body>
     <div class="container">
         <h1>Insira um produto</h1>
         <section>
-            <form>
+            <form id="form-produto">
                 <div class="form-group">
                     <label for="produto">Produto</label>
-                    <input class="form-control" type="text" name="produto" id="">
+                    <input class="form-control" type="text" name="produto" id="input-produto">
                 </div>
 
                 <div class="form-group">
                     <label for="valor">Valor</label>
-                    <input class="form-control" type="number" name="valor" id="">
+                    <input class="form-control" type="number" name="valor" id="input-valor">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -25,17 +26,20 @@
 
         <section>
             <h1>Produtos Cadastrados</h1>
-            <button>Deletar todos os produtos</button>
-            <table class="table table-bordered col-sm-4 mt-3">
+            <button id="delete-all" class="btn btn-danger">Deletar todos os produtos</button>
+            <table class="table table-bordered col-sm-4 mt-3" id="tableProdutos">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Produto</th>
                         <th>Valor</th>
+                        <th>Excluir?</th>
                     </tr>
                 </thead>
+                <tbody>
+                </tbody>
             </table>
         </section>
+        <script src="index.js"></script>
     </div>
 </body>
 </html>
