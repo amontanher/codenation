@@ -3,12 +3,30 @@
     <meta charset="UTF-8">
     <title>Palíndromo Validator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" class="rel">
+
+    <style>
+        *{
+            font-family: Roboto, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .row{
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .card{
+            width:100%;
+            height: 100%;
+        }
+    </style>
+
 </head>
 <body>
     <div class="container h-100">
-        <div class="cont-card">
-            <div class="card col-sm-6">
+        <div class="cont-card justify-content-center">
+            <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <h6 class="card-text">Verificador de Palíndromo</h6>
@@ -22,20 +40,98 @@
                     </section>
 
                     <section>
-                        <table class="table table-responsive table-striped mt-3" id="table-palindromos">
-                            <thead>
-                                <th>Frase</th>
-                                <th>Palíndromo</th>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-striped mt-3" id="table-palindromos">
+                                <thead>
+                                    <th>Frase</th>
+                                    <th>Palíndromo</th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script>
+        const inputPalindromo = document.querySelector("#palindromoValue");
+        const btnDeleteAll = document.querySelector("#delete-all");
+        const tablePalindromos = document.querySelector('#table-palindromos');
+        const KEY_ENTER = 13;
+
+        inputPalindromo.addEventListener("keypress", handleSubmitForm);
+        btnDeleteAll.addEventListener('click', handleDeleteAll);
+
+        function handleSubmitForm(event){
+            const isEnter = event.keyCode === KEY_ENTER;
+
+            if(isEnter){
+                const value = inputPalindromo.value;
+                if(value){
+                    const palindromo = {
+                        valor: value,
+                        isPalindrome: checkPalindrome(value)
+                    }
+
+                    createDataTable(palindromo);
+                }
+
+                cleanInput();
+            }
+        }
+
+        function handleDeleteAll() {
+            tablePalindromos.lastElementChild.innerHTML = '';
+        }
+
+        function checkPalindrome(value){
+            const valueInvertido = value.split('').reverse().join('');
+            return value === valueInvertido;
+        }
+
+        function createDataTable(object){
+            const tableRow = createTableRow();
+            const tableDataPalindromo = createTableData(object.valor);
+            const tableDataValor = createTableDataWithAttribute(object.isPalindrome);
+
+            tableRow.appendChild(tableDataPalindromo);
+            tableRow.appendChild(tableDataValor);
+
+            tablePalindromos.children[1].appendChild(tableRow);
+        }
+
+        function createTableRow() {
+            const row = document.createElement('tr');
+            return row;
+        }
+
+        function createTableData(valor){
+            const data = document.createElement('td');
+            data.textContent = valor;
+            return data;
+        }
+
+        function createTableDataWithAttribute(valor){
+            const data = document.createElement('td');
+
+            let result = "negativo"
+
+            if(valor){
+                result = "positivo"
+            }
+
+            data.textContent = valor ? 'sim' : 'não';
+
+            data.setAttribute("data-verificado", result);
+            return data;
+        }
+
+        function cleanInput(){
+            inputPalindromo.value = "";
+        }
+    </script>
 </body>
 </html>
