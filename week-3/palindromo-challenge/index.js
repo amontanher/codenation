@@ -36,7 +36,7 @@ function checkPalindrome(value){
 function createDataTable(object){
     const tableRow = createTableRow();
     const tableDataPalindromo = createTableData(object.valor);
-    const tableDataValor = createTableData(object.isPalindrome);
+    const tableDataValor = createTableDataWithAttribute(object.isPalindrome);
 
     tableRow.appendChild(tableDataPalindromo);
     tableRow.appendChild(tableDataValor);
@@ -52,6 +52,20 @@ function createTableRow() {
 function createTableData(valor){
     const data = document.createElement('td');
     data.textContent = valor;
+    return data;
+}
+
+function createTableDataWithAttribute(valor){
+    const data = document.createElement('td');
+    data.textContent = valor;
+
+    let result = "negativo"
+
+    if(valor){
+        result = "positivo"
+    }
+
+    data.setAttribute("data-verificado", result);
     return data;
 }
 
