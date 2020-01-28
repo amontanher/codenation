@@ -57,13 +57,14 @@ function createTableData(valor){
 
 function createTableDataWithAttribute(valor){
     const data = document.createElement('td');
-    data.textContent = valor;
 
     let result = "negativo"
 
     if(valor){
         result = "positivo"
     }
+
+    data.textContent = valor ? 'sim' : 'não';
 
     data.setAttribute("data-verificado", result);
     return data;
