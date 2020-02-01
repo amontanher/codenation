@@ -11,7 +11,7 @@ function Alert(props){
 
 function Button(props){
     return(
-    <button type="button" className={`btn btn-${props.color}`}>{props.title}</button>
+    <button type="button" style={{color: "red"}} className={`btn btn-${props.color}`}>{props.title}</button>
     )
 }
 
