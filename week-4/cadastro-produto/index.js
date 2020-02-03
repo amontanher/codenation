@@ -92,7 +92,7 @@ function App(){
     }
 
     const handleClickDeleteAll = () => {
-        setProdutos = ([]);
+        setProdutos([]);
     };
 
     //unico lugar para chamar uma funcao assincrona
