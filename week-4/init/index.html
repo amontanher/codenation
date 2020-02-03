@@ -1,88 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>React</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="root"></div>
 
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> <!--document.QuerySelector  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js" integrity="sha256-L/S5mZS8SPJVWoKym3Zwgf2f3/s3X3MaZ7QBA9HdnN8=" crossorigin="anonymous"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!--document.QuerySelector  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"
+      integrity="sha256-L/S5mZS8SPJVWoKym3Zwgf2f3/s3X3MaZ7QBA9HdnN8="
+      crossorigin="anonymous"
+    ></script>
 
     <script type="text/babel">
-        // function App() {
-        //     return React.createElement(
-        //         "div",
-        //         null,
-        //         React.createElement(
-        //             "h1",
-        //             null,
-        //             "Olá React!"))
-        // }
-        function Input(props){
-            return (
-                <div>
-                    <label htmlFor={props.name}>{props.label}</label>
-                    <input name={props.name}/>
-                </div>
-            )
-        }
+      // function App() {
+      //     return React.createElement(
+      //         "div",
+      //         null,
+      //         React.createElement(
+      //             "h1",
+      //             null,
+      //             "Olá React!"))
+      // }
+      function Input(props) {
+        return (
+          <div>
+            <label htmlFor={props.name}>{props.label}</label>
+            <input name={props.name} />
+          </div>
+        );
+      }
 
-        function Form(props){
-            return (
-                <form>
-                    <Input label={props.label} name={props.name}/>
-                </form>
-            )
-        }
+      function Form(props) {
+        return (
+          <form>
+            <Input label={props.label} name={props.name} />
+          </form>
+        );
+      }
 
-        function TableRow(props){
-            return(
-                <tr>
-                    <td>{props.first}</td>
-                    <td>{props.second}</td>
-                </tr>
-            )
-        }
+      function TableRow(props) {
+        return (
+          <tr>
+            <td>{props.first}</td>
+            <td>{props.second}</td>
+          </tr>
+        );
+      }
 
-        function Table(){
-            return(
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Col 1</th>
-                            <th>Col 2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <TableRow first="primeiro" second="segundo"/>
-                    </tbody>
-                </table>
-            )
-        }
+      function Table() {
+        return (
+          <table>
+            <thead>
+              <tr>
+                <th>Col 1</th>
+                <th>Col 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <TableRow first="primeiro" second="segundo" />
+            </tbody>
+          </table>
+        );
+      }
 
-        function Content(){
-            return (<div><h2>Conteudo </h2></div>)
-        }
+      function Content() {
+        return (
+          <div>
+            <h2>Conteudo </h2>
+          </div>
+        );
+      }
 
-        function Title(props){
-            return <h1>{props.title}</h1>
-        }
+      function Title(props) {
+        return <h1>{props.title}</h1>;
+      }
 
-        // componente tem que ser com letra maisucula para nao confrontar com tag html
-        function App(){
-            return (<div>
-                        <Title title="JSX"/>
-                        <Table/>
-                        <Form label="nome" name="nome"/>
-                        <Form label="produto" name="produto"/>
-                    </div>);
-        }
+      // componente tem que ser com letra maisucula para nao confrontar com tag html
+      function App() {
+        return (
+          <div>
+            <Title title="JSX" />
+            <Table />
+            <Form label="nome" name="nome" />
+            <Form label="produto" name="produto" />
+          </div>
+        );
+      }
 
-        ReactDOM.render(App(), document.querySelector('#root'))
+      ReactDOM.render(App(), document.querySelector('#root'));
     </script>
-</body>
+  </body>
 </html>
