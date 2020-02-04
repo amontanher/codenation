@@ -24,9 +24,12 @@
     <script type="text/babel">
       function Button(props) {
         return (
-          <button onClick={props.onClick} data-test={props.dataTest}>
-            {props.name}
-          </button>
+          <div>
+            <button onClick={props.onClick} data-test={props.dataTest}>
+              {props.name}
+            </button>
+            <Br />
+          </div>
         );
       }
 
@@ -56,14 +59,25 @@
 
       function Input(props) {
         return (
-          <input
-            type="text"
-            name={props.inputInfos.name}
-            data-test={props.dataTest}
-            onKeyPress={props.inputInfos.onKeyPress}
-            onChange={props.inputInfos.onChange}
-            value={props.inputInfos.value}
-          ></input>
+          <div>
+            <input
+              type="text"
+              name={props.inputInfos.name}
+              data-test={props.dataTest}
+              onKeyPress={props.inputInfos.onKeyPress}
+              onChange={props.inputInfos.onChange}
+              value={props.inputInfos.value}
+            ></input>
+            <Br />
+          </div>
+        );
+      }
+
+      function Br() {
+        return (
+          <div>
+            <br />
+          </div>
         );
       }
 
@@ -72,18 +86,33 @@
         const [frases, setFrases] = React.useState([]);
         const header = ['Frase', 'Palíndromo'];
 
+        const checkPalindromo = value => {
+          const valueLowerCase = value.toLowerCase();
+          const valueInvertido = valueLowerCase
+            .replace(/ /g, '')
+            .split('')
+            .reverse()
+            .join('');
+
+          return valueLowerCase.replace(/ /g, '') === valueInvertido;
+        };
+
         const handleFrase = event => {
           setFrase(event.target.value);
         };
 
         const handleSubmit = event => {
           if (event.key === 'Enter') {
-            const newFrase = {
-              frase: frase,
-              isPalindromo: 'sim'
-            };
+            const inputValid = frase.replace(/ /g, '');
 
-            setFrases([...frases, newFrase]);
+            if (inputValid) {
+              const newFrase = {
+                frase: frase,
+                isPalindromo: checkPalindromo(inputValid) ? 'sim' : 'não'
+              };
+
+              setFrases([...frases, newFrase]);
+            }
             setFrase('');
           }
         };
