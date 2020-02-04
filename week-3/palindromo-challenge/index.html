@@ -1,137 +1,72 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>Palíndromo Validator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <style>
-        *{
-            font-family: Roboto, sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-
-        .row{
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .card{
-            width:100%;
-            height: 100%;
-        }
-    </style>
-
-</head>
+<html>
+  <head>
+    <title>Verificador de Palíndromo</title>
+  </head>
 <body>
-    <div class="container h-100">
-        <div class="cont-card justify-content-center">
-            <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <h6 class="card-text">Verificador de Palíndromo</h6>
-                        <button class="btn btn-default" data-test="limpar-dados" id="delete-all">Apagar Histórico</button>
-                    </div>
-                </div>
+	<p>Verificador de Palíndromo</p>
+	<button data-test="limpar-dados" id="delete-all">Apagar Histórico</button>
 
-                <div class="card-body">
-                    <section>
-                        <input class="form-control" type="text" placeholder="Palíndromo" id="palindromoValue" data-test="entrada">
-                    </section>
+	<form id="form-palindromo">
+		<input placeholder="Palíndromo" type="text" name="palindromo" id="inputPalindromo" data-test="entrada">
+	</form>
 
-                    <section>
-                        <div class="table-responsive">
-                            <table class="table table-striped mt-3" id="table-palindromos">
-                                <thead>
-                                    <th>Frase</th>
-                                    <th>Palíndromo</th>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
+	<table id="table-palindromos">
+		<thead>
+			<th>Frase</th>
+			<th>Palíndromo</th>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script>
+		const inputPalindromo = document.querySelector("#inputPalindromo");
+		const btnDeleteAll = document.querySelector("#delete-all");
+		const tablePalindromos = document.querySelector('#table-palindromos');
 
-    <script>
-        const inputPalindromo = document.querySelector("#palindromoValue");
-        const btnDeleteAll = document.querySelector("#delete-all");
-        const tablePalindromos = document.querySelector('#table-palindromos');
-        const KEY_ENTER = 13;
+		inputPalindromo.addEventListener('keypress', handleSubmitForm);
+		btnDeleteAll.addEventListener('click', handleDeleteAll);
 
-        inputPalindromo.addEventListener("keypress", handleSubmitForm);
-        btnDeleteAll.addEventListener('click', handleDeleteAll);
+		function handleSubmitForm(event){
+			if(event.keyCode === 13){
+				event.preventDefault();
 
-        function handleSubmitForm(event){
-            const isEnter = event.keyCode === KEY_ENTER;
+				const inputValue = inputPalindromo.value;
+				const inputIsValid = inputPalindromo.value.replace(/ /g, '');
 
-            if(isEnter){
-                const value = inputPalindromo.value;
-                if(value){
-                    const palindromo = {
-                        valor: value,
-                        isPalindrome: checkPalindrome(value)
-                    }
+				if(inputIsValid){
+					const isPalindrome = checkPalindrome(inputValue);
 
-                    createDataTable(palindromo);
-                }
+					const palindromo = {
+						valor: inputValue,
+						isPalindrome: isPalindrome ? "sim" : "não",
+						verificado: isPalindrome ? "positivo" : "negativo"
+					}
 
-                cleanInput();
-            }
-        }
+					createDataTable(palindromo);
+				}
 
-        function handleDeleteAll() {
-            tablePalindromos.lastElementChild.innerHTML = '';
-        }
+			inputPalindromo.value = "";
+			}
+		}
 
-        function checkPalindrome(value){
-            const valueInvertido = value.split('').reverse().join('');
-            return value === valueInvertido;
-        }
+		function checkPalindrome(value){
+			const valueLowerCase = value.toLowerCase();
+			const valueInvertido = valueLowerCase.replace(/ /g, '').split('').reverse().join('');
 
-        function createDataTable(object){
-            const tableRow = createTableRow();
-            const tableDataPalindromo = createTableData(object.valor);
-            const tableDataValor = createTableDataWithAttribute(object.isPalindrome);
+			return valueLowerCase.replace(/ /g, '') === valueInvertido;
+		}
 
-            tableRow.appendChild(tableDataPalindromo);
-            tableRow.appendChild(tableDataValor);
+		function createDataTable(object){
+			var newRow = tablePalindromos.children[1].insertRow(0);
+			var cellFrase = newRow.insertCell(0);
+			var cellPalindromo = newRow.insertCell(1);
+			cellFrase.innerHTML = object.valor;
+			cellPalindromo.innerHTML = object.isPalindrome;
+			cellPalindromo.setAttribute("data-verificado", object.verificado);
+		}
 
-            tablePalindromos.children[1].appendChild(tableRow);
-        }
-
-        function createTableRow() {
-            const row = document.createElement('tr');
-            return row;
-        }
-
-        function createTableData(valor){
-            const data = document.createElement('td');
-            data.textContent = valor;
-            return data;
-        }
-
-        function createTableDataWithAttribute(valor){
-            const data = document.createElement('td');
-
-            let result = "negativo"
-
-            if(valor){
-                result = "positivo"
-            }
-
-            data.textContent = valor ? 'sim' : 'não';
-
-            data.setAttribute("data-verificado", result);
-            return data;
-        }
-
-        function cleanInput(){
-            inputPalindromo.value = "";
-        }
-    </script>
+		function handleDeleteAll() {
+			tablePalindromos.lastElementChild.innerHTML = '';
+		}
+	</script>
 </body>
 </html>
