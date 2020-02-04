@@ -65,7 +65,7 @@
             <input
               type="text"
               name={props.inputInfos.name}
-              data-test={props.dataTest}
+              data-test="entrada"
               onKeyPress={props.inputInfos.onKeyPress}
               onChange={props.inputInfos.onChange}
               value={props.inputInfos.value}
@@ -84,19 +84,19 @@
       }
 
       function App() {
-        const [frase, setFrase] = React.useState('');
+        const [frase, setFrase] = React.useState("");
         const [frases, setFrases] = React.useState([]);
-        const header = ['Frase', 'Palíndromo'];
+        const header = ["Frase", "Palíndromo"];
 
         const checkPalindromo = value => {
           const valueLowerCase = value.toLowerCase();
           const valueInvertido = valueLowerCase
-            .replace(/ /g, '')
-            .split('')
+            .replace(/ /g, "")
+            .split("")
             .reverse()
-            .join('');
+            .join("");
 
-          return valueLowerCase.replace(/ /g, '') === valueInvertido;
+          return valueLowerCase.replace(/ /g, "") === valueInvertido;
         };
 
         const handleFrase = event => {
@@ -104,20 +104,20 @@
         };
 
         const handleSubmit = event => {
-          if (event.key === 'Enter') {
-            const inputValid = frase.replace(/ /g, '');
+          if (event.key === "Enter") {
+            const inputValid = frase.replace(/ /g, "");
 
             if (inputValid) {
               const booleanValue = checkPalindromo(inputValid);
               const newFrase = {
                 frase: frase,
-                isPalindromo: booleanValue ? 'sim' : 'não',
-                dataVerificado: booleanValue ? 'positivo' : 'negativo'
+                isPalindromo: booleanValue ? "sim" : "não",
+                dataVerificado: booleanValue ? "positivo" : "negativo"
               };
 
               setFrases([...frases, newFrase]);
             }
-            setFrase('');
+            setFrase("");
           }
         };
 
@@ -126,9 +126,9 @@
         };
 
         const inputInfos = {
-          type: 'text',
+          type: "text",
           value: frase,
-          name: 'frase',
+          name: "frase",
           onChange: handleFrase,
           onKeyPress: handleSubmit
         };
@@ -146,7 +146,7 @@
         );
       }
 
-      ReactDOM.render(<App />, document.querySelector('#root'));
+      ReactDOM.render(<App />, document.querySelector("#root"));
     </script>
   </body>
 </html>
