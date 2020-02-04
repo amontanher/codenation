@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Palíndromo</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js" integrity="sha256-L/S5mZS8SPJVWoKym3Zwgf2f3/s3X3MaZ7QBA9HdnN8=" crossorigin="anonymous"></script>
+
+    <script type="text/babel">
+        function Button(props){
+            return(
+                <button data-test={props.dataTest}>{props.name}</button>
+            )
+        }
+
+        function Input(props){
+            return(
+                <input type="text" data-test={props.dataTest} onKeyPress={props.onKeyPress}></input>
+            )
+        }
+
+        function Form(props){
+            return(
+                <form>
+                    <Input dataTest="entrada" onKeyPress={props.onKeyPress}/>
+                </form>
+            )
+        }
+
+        function Table(props) {
+            return (
+                <table className="table">
+                    <thead>
+                        <tr>
+                            {
+                                props.header.map((item, index) =>{
+                                    return <th key={index}>{item}</th>;
+                                })
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            );
+        }
+
+        function App(){
+            const [palavras, setPalavras] = React.useState([]);
+            const header = ['Frase', 'Palíndromo'];
+
+            const handleSubmit = (event) => {
+                if(event.keyCode === 13){
+                    event.preventDefault();
+                    console.log(event);
+                }
+            };
+
+            return(
+                <div>
+                    <Button dataTest="limpar-dados" name="Apagar Histórico"/>
+                    <Form onKeyPress={handleSubmit}/>
+                    <Table header={header} rows={palavras}/>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App />, document.querySelector('#root'));
+
+    </script>
+
+</body>
+</html>
