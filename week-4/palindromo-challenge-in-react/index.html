@@ -30,17 +30,6 @@
         );
       }
 
-      function Input(props) {
-        return (
-          <input
-            type="text"
-            data-test={props.dataTest}
-            onKeyPress={props.onKeyPress}
-            onChange={props.onChange}
-          ></input>
-        );
-      }
-
       function Table(props) {
         return (
           <table className="table">
@@ -65,6 +54,19 @@
         );
       }
 
+      function Input(props) {
+        return (
+          <input
+            type="text"
+            name={props.inputInfos.name}
+            data-test={props.dataTest}
+            onKeyPress={props.inputInfos.onKeyPress}
+            onChange={props.inputInfos.onChange}
+            value={props.inputInfos.value}
+          ></input>
+        );
+      }
+
       function App() {
         const [frase, setFrase] = React.useState('');
         const [frases, setFrases] = React.useState([]);
@@ -82,11 +84,20 @@
             };
 
             setFrases([...frases, newFrase]);
+            setFrase('');
           }
         };
 
         const handleClickDeleteAll = () => {
           setFrases([]);
+        };
+
+        const inputInfos = {
+          type: 'text',
+          value: frase,
+          name: 'frase',
+          onChange: handleFrase,
+          onKeyPress: handleSubmit
         };
 
         return (
@@ -96,7 +107,7 @@
               name="Apagar Histórico"
               onClick={handleClickDeleteAll}
             />
-            <Input onKeyPress={handleSubmit} onChange={handleFrase} />
+            <Input inputInfos={inputInfos} />
             <Table header={header} rows={frases} />
           </div>
         );
