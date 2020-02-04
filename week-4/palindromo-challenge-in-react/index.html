@@ -48,7 +48,9 @@
                 return (
                   <tr key={index}>
                     <td>{item.frase}</td>
-                    <td>{item.isPalindromo}</td>
+                    <td data-verificado={item.dataVerificado}>
+                      {item.isPalindromo}
+                    </td>
                   </tr>
                 );
               })}
@@ -106,9 +108,11 @@
             const inputValid = frase.replace(/ /g, '');
 
             if (inputValid) {
+              const booleanValue = checkPalindromo(inputValid);
               const newFrase = {
                 frase: frase,
-                isPalindromo: checkPalindromo(inputValid) ? 'sim' : 'não'
+                isPalindromo: booleanValue ? 'sim' : 'não',
+                dataVerificado: booleanValue ? 'positivo' : 'negativo'
               };
 
               setFrases([...frases, newFrase]);
@@ -136,7 +140,7 @@
               name="Apagar Histórico"
               onClick={handleClickDeleteAll}
             />
-            <Input inputInfos={inputInfos} />
+            <Input inputInfos={inputInfos} dataTest="entrada" />
             <Table header={header} rows={frases} />
           </div>
         );
