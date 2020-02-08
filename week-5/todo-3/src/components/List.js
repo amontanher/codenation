@@ -1,11 +1,12 @@
 import React from 'react'
 
-function List(props){
-    return <ul>
-            {props.todos.map((todo, index) => {
-                return <li key={todo.id} onClick={() => props.onClick(todo)}>{todo.name}</li>
-            })}
-            </ul>
+export default function List({todos, onClick}) {
+  return <ul>
+    {todos.map((todo, index) => (
+      <li key={todo.id} onClick={() => onClick(index)}>
+        {todo.done && "✓ "}
+        {todo.name}
+      </li>
+    ))}
+  </ul>
 }
-
-export default List;

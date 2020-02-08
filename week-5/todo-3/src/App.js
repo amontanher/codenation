@@ -9,8 +9,10 @@ function App() {
   const [input, setInput] = React.useState("");
   const [todos, setTodos] = React.useState([]);
 
-  const handleItemClick = (todo) => {
-    todo.done = true;
+  const handleItemClick = (indexTodo) => {
+    const newTodos = [...todos];
+    newTodos[indexTodo].done = !newTodos[indexTodo].done;
+    setTodos(newTodos);
   }
 
   const handleChange=(event)=>{
