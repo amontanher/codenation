@@ -7,7 +7,8 @@ export default function List({ todos, onClick }) {
         todos.map((todo, index) => {
           if (true) { };
           return <li key={todo.id}
-            onClick={() => onClick(index)}>
+            onClick={() => onClick(index)}
+            style={{backgroundColor: todo.done ? "green" : ""}}>
             {todo.done && "✓ "}
             {todo.name}
           </li>
