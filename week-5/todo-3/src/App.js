@@ -15,36 +15,37 @@ function App() {
     setTodos(newTodos);
   }
 
-  const handleChange=(event)=>{
+  const handleChange = (event) => {
     setInput(event.target.value);
   }
 
   const handlePressEnter = (event) => {
-    if(event.keyCode === 13){
+    if (event.keyCode === 13) {
+      if (input) {
+        const nextId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1;
 
-      const nextId = todos.length > 0 ? todos[todos.length-1].id + 1 : 1;
+        const newTodo = {
+          id: nextId,
+          name: input,
+          done: false
+        };
 
-      const newObj={
-        id: nextId,
-        name: input,
-        done: false
+        setTodos([...todos, newTodo]);
+        setInput('');
       }
-
-      setTodos([...todos, newObj]);
-      setInput('');
     }
   }
 
   return (
     <Container>
       <section>
-        <Title title="Todos List"/>
+        <Title title="Todos List" />
         <Input
           value={input}
           onChange={handleChange}
           onPressEnter={handlePressEnter}
         />
-        <List todos={todos} onClick={handleItemClick}/>
+        <List todos={todos} onClick={handleItemClick} />
       </section>
     </Container>
   );
