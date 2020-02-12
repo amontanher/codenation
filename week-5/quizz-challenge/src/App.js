@@ -8,34 +8,31 @@ function App() {
     {
       id: 1,
       title: 'Qual é a capital da Argentina?',
-      correct: 2,
       options: [
-        { id: 1, cap: 'Mendoza' },
-        { id: 2, cap: 'Buenos Aires' },
-        { id: 3, cap: 'Bariloche' },
-        { id: 4, cap: 'Ushuaia' }
+        { id: 1, cap: 'Mendoza', correct: false },
+        { id: 2, cap: 'Buenos Aires', correct: true },
+        { id: 3, cap: 'Bariloche', correct: false },
+        { id: 4, cap: 'Ushuaia', correct: false }
       ]
     },
     {
       id: 2,
       title: 'Qual é a capital da Bolívia?',
-      correct: 3,
       options: [
-        { id: 1, cap: 'Santa Cruz' },
-        { id: 2, cap: 'Sucre' },
-        { id: 3, cap: 'La Paz' },
-        { id: 4, cap: 'Cochabamba' }
+        { id: 1, cap: 'Santa Cruz', correct: false },
+        { id: 2, cap: 'Sucre', correct: false },
+        { id: 3, cap: 'La Paz', correct: true },
+        { id: 4, cap: 'Cochabamba', correct: false }
       ]
     },
     {
       id: 3,
       title: 'Qual é a capital do Uruguai?',
-      correct: 4,
       options: [
-        { id: 1, cap: 'Punta del Este' },
-        { id: 2, cap: 'Colônia do Sacramento' },
-        { id: 3, cap: 'Salto' },
-        { id: 4, cap: 'Montevidéu' }
+        { id: 1, cap: 'Punta del Este', correct: false },
+        { id: 2, cap: 'Colônia do Sacramento', correct: false },
+        { id: 3, cap: 'Salto', correct: false },
+        { id: 4, cap: 'Montevidéu', correct: true }
       ]
     }
   ];
@@ -43,7 +40,9 @@ function App() {
   const [acertos, setAcertos] = React.useState(0);
 
   const handleValidate = question => {
-    setAcertos(acertos + 1);
+    if (question.correct) {
+      setAcertos(acertos + 1);
+    }
   };
 
   const handleRefazer = function() {
