@@ -42,14 +42,27 @@ function App() {
 
   const [acertos, setAcertos] = React.useState(0);
 
+  const handleValidate = question => {
+    setAcertos(acertos + 1);
+  };
+
+  const handleRefazer = function() {
+    setAcertos(0);
+  };
+
   return (
     <Container>
       {questions.map((question, index) => {
         return (
-          <Question question={question.title} options={question.options} />
+          <Question
+            key={index}
+            question={question.title}
+            options={question.options}
+            onClick={handleValidate}
+          />
         );
       })}
-      <Result acertos={acertos} />
+      <Result acertos={acertos} onClick={handleRefazer} />
     </Container>
   );
 }
