@@ -4,7 +4,7 @@ function Question(props) {
   return (
     <div data-test="pergunta">
       <h3>{props.question}</h3>
-      <ul>
+      <ul data-resposta={props.resposta}>
         {props.options.map((option, index) => {
           return (
             <li

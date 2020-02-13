@@ -4,6 +4,8 @@ import Question from './components/Question';
 import Result from './components/Result';
 
 function App() {
+  const [acertos, setAcertos] = React.useState(0);
+  const [resposta, setResposta] = React.useState("");
   const questions = [
     {
       id: 1,
@@ -37,15 +39,16 @@ function App() {
     }
   ];
 
-  const [acertos, setAcertos] = React.useState(0);
-
   const handleValidate = question => {
     if (question.correct) {
       setAcertos(acertos + 1);
+      setResposta("correta");
+    } else {
+      setResposta("errada");
     }
   };
 
-  const handleRefazer = function() {
+  const handleRefazer = function () {
     setAcertos(0);
   };
 
@@ -58,6 +61,7 @@ function App() {
             question={question.title}
             options={question.options}
             onClick={handleValidate}
+            resposta={resposta}
           />
         );
       })}
