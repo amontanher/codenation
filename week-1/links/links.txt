@@ -1,0 +1,17 @@
+1) Building Your First Web Page - Learn to Code HTML & CSS
+https://learn.shayhowe.com/html-css/building-your-first-web-page/
+
+2)HTML5 Semantic Elements
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+3)A Complete Guide to Flexbox | CSS-Tricks
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+4)Flexbox Froggy
+https://flexboxfroggy.com/
+
+5)Flexbox Tutorial - Learn CSS Flexbox For Free
+https://scrimba.com/g/gflexbox
+
+6)APRENDA HTML5 E CSS3 - #1 Introdução e configuração do ambiente
+https://www.youtube.com/watch?v=014fy8sGPto
