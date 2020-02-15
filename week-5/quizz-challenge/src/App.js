@@ -6,7 +6,7 @@ import Result from './components/Result';
 function App() {
   const [perguntasRespondidas, setPerguntasRespondidas] = React.useState([]);
   const [acertos, setAcertos] = React.useState(0);
-  const [resposta, setResposta] = React.useState("");
+  const [respostas, setRespostas] = React.useState({});
   const questions = [
     {
       id: 1,
@@ -49,9 +49,9 @@ function App() {
     if(!jaRespondida.length){
       if(idAnswered === question.correct){
         setAcertos(acertos + 1);
-        setResposta("correta");
+        setRespostas({...respostas, [question.id]:{isCorrect:"correta"}});
       }else{
-        setResposta("errada");
+        setRespostas({...respostas, [question.id]:{isCorrect:"errada"}});
       }
       setPerguntasRespondidas([...perguntasRespondidas, question.id]);
     }
@@ -59,6 +59,8 @@ function App() {
 
   const handleRefazer = function () {
     setAcertos(0);
+    setRespostas({});
+    setPerguntasRespondidas([]);
   };
 
   return (
@@ -69,6 +71,7 @@ function App() {
             key={index}
             question={question}
             onClick={handleValidate}
+            resposta={respostas[question.id]}
           />
         );
       })}

@@ -2,9 +2,9 @@ import React from 'react';
 
 function Question(props) {
   return (
-    <div data-test="pergunta">
+    <div>
       <h3>{props.question.title}</h3>
-      <ul data-resposta="alterar">
+      <ul data-resposta={props.resposta === undefined ? null : props.resposta.isCorrect} data-test="pergunta">
         {props.question.options.map((option, index) => {
           return (
             <li
