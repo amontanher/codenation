@@ -4,6 +4,7 @@ import Question from './components/Question';
 import Result from './components/Result';
 
 function App() {
+  const [perguntasRespondidas, setPerguntasRespondidas] = React.useState([]);
   const [acertos, setAcertos] = React.useState(0);
   const [resposta, setResposta] = React.useState("");
   const questions = [
@@ -46,6 +47,9 @@ function App() {
     } else {
       setResposta("errada");
     }
+
+
+    // perguntasRespondidas.filter(item => item === questin.Id)
   };
 
   const handleRefazer = function () {

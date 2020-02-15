@@ -8,7 +8,7 @@ function Question(props) {
         {props.options.map((option, index) => {
           return (
             <li
-              key={index}
+              key={option.id}
               onClick={() => props.onClick(option)}
               data-test="opcao"
             >
