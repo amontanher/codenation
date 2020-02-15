@@ -10,46 +10,51 @@ function App() {
   const questions = [
     {
       id: 1,
+      correct: 2,
       title: 'Qual é a capital da Argentina?',
       options: [
-        { id: 1, cap: 'Mendoza', correct: false },
-        { id: 2, cap: 'Buenos Aires', correct: true },
-        { id: 3, cap: 'Bariloche', correct: false },
-        { id: 4, cap: 'Ushuaia', correct: false }
+        { id: 1, cap: 'Mendoza'},
+        { id: 2, cap: 'Buenos Aires'},
+        { id: 3, cap: 'Bariloche'},
+        { id: 4, cap: 'Ushuaia'}
       ]
     },
     {
       id: 2,
+      correct: 3,
       title: 'Qual é a capital da Bolívia?',
       options: [
-        { id: 1, cap: 'Santa Cruz', correct: false },
-        { id: 2, cap: 'Sucre', correct: false },
-        { id: 3, cap: 'La Paz', correct: true },
-        { id: 4, cap: 'Cochabamba', correct: false }
+        { id: 1, cap: 'Santa Cruz'},
+        { id: 2, cap: 'Sucre'},
+        { id: 3, cap: 'La Paz'},
+        { id: 4, cap: 'Cochabamba'}
       ]
     },
     {
       id: 3,
+      correct: 4,
       title: 'Qual é a capital do Uruguai?',
       options: [
-        { id: 1, cap: 'Punta del Este', correct: false },
-        { id: 2, cap: 'Colônia do Sacramento', correct: false },
-        { id: 3, cap: 'Salto', correct: false },
-        { id: 4, cap: 'Montevidéu', correct: true }
+        { id: 1, cap: 'Punta del Este'},
+        { id: 2, cap: 'Colônia do Sacramento'},
+        { id: 3, cap: 'Salto'},
+        { id: 4, cap: 'Montevidéu'}
       ]
     }
   ];
 
-  const handleValidate = question => {
-    if (question.correct) {
-      setAcertos(acertos + 1);
-      setResposta("correta");
-    } else {
-      setResposta("errada");
+  const handleValidate = (question, idAnswered) => {
+    const jaRespondida = perguntasRespondidas.filter(item => item === question.id);
+
+    if(!jaRespondida.length){
+      if(idAnswered === question.correct){
+        setAcertos(acertos + 1);
+        setResposta("correta");
+      }else{
+        setResposta("errada");
+      }
+      setPerguntasRespondidas([...perguntasRespondidas, question.id]);
     }
-
-
-    // perguntasRespondidas.filter(item => item === questin.Id)
   };
 
   const handleRefazer = function () {
@@ -62,14 +67,12 @@ function App() {
         return (
           <Question
             key={index}
-            question={question.title}
-            options={question.options}
+            question={question}
             onClick={handleValidate}
-            resposta={resposta}
           />
         );
       })}
-      <Result acertos={acertos} onClick={handleRefazer} />
+      <Result acertos={acertos} onClick={handleRefazer} total={questions.length}/>
     </Container>
   );
 }
