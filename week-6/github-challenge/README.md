@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Listar repositórios de usuário do GitHub
 
-## Available Scripts
+O GitHub é a nossa rede social, e por que não usar sua API junto com os seus novos conhecimentos em programação asíncrona, validação de formulários e consumo de APIS pra construir algo novo? O seu objetivo é criar uma aplicação que lista os repositórios de um usuário do GitHub!
 
-In the project directory, you can run:
+## Requisitos
 
-### `yarn start`
+Você precisará do Nodejs (LTS ou Current) instalado em sua máquina.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Na primeira execução rodar o comando:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```bash
+$ npm install
+```
 
-### `yarn test`
+Depois, para começar a desenvolver
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm start
+```
 
-### `yarn build`
+## Tópicos
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Com esse desafio, você aprenderá:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Promises
+- Forms in React
+- Axios
+- Fetch API
+- State
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tarefas
 
-### `yarn eject`
+- Ler o texto de um `input` para pegar o nome do usuário a ter os repositórios listados assim que o formulário for submetido
+- Pré validar o conteúdo do input de acordo com estas regras:
+  - Somente caracteres alfanuméricos ou um único hífen
+  - Não pode começar ou terminar com hífen
+  - Máximo de 39 caracteres
+- Fazer requisição para o endpoint do GitHub quando apertar `enter` no input somente se o nome de usuário for válido
+- Se o usuário não existir (404) exibir erro de validação de usuário não encontrado
+- Se o usuário não tiver nenhum repositório, exibir um "Empty State" de "O usuário não tem nenhum repositório"
+- Se a request for bem sucessida e o usuário ter 1 ou mais repositórios, liste-os.
+  - Deve-se exibir ao menos informaçōes básicas do repositório (nome, link e número de stars)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Exemplo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](https://codenation-challenges.s3-us-west-1.amazonaws.com/vue-3/tToalvQ.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Atenção
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+O input deve conter um atributo `data-test` com o valor `entrada`
+O container do "404" deve conter uma atributo `data-test` com o valor `nao-encontrado`
+O container do "Empty State" deve conter uma atributo `data-test` com o valor `sem-repositorios`
+Cada container de repositório deve conter uma atributo `data-test` com o valor `repositorio`
