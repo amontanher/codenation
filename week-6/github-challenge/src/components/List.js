@@ -10,6 +10,7 @@ export default function List({ repositories }) {
             <h2>{item.description}</h2>
             <h3>{item.language}</h3>
             <h4>{item.created_at}</h4>
+			<h5>{item.stargazers_count}</h5>
           </li>
         );
       })}
