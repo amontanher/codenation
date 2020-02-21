@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Moment from 'react-moment';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const useStyles = makeStyles({
@@ -52,11 +52,8 @@ export default function CardItem({ repository }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          size="small"
-          onClick={() => handleRedirect(repository.html_url)}
-        >
-          Check out!
+        <Button onClick={() => handleRedirect(repository.html_url)}>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Button>
       </CardActions>
     </Card>
