@@ -3,7 +3,7 @@ import React from 'react';
 export default function List({ repositories }) {
   console.log(repositories);
   return (
-    <ul>
+    <ul data-test="repositorio">
       {repositories.map((item, index) => {
         return (
           <li key={index}>

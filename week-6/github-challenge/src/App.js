@@ -31,8 +31,18 @@ function App() {
   };
 
   const handleResponse = r => {
-    if (r.status === 200) {
+    if (r.status === 200 && r.repositories.length > 0) {
       setRepositories(r.repositories);
+      setNotFound(false);
+      setEmpty(false);
+    } else if (r.status === 404) {
+      setRepositories([]);
+      setNotFound(true);
+      setEmpty(false);
+    } else {
+      setRepositories([]);
+      setNotFound(false);
+      setEmpty(true);
     }
   };
 
@@ -48,6 +58,8 @@ function App() {
       />
       {error && <p>User inválido</p>}
       <List repositories={repositories} />
+      {notFound && <p data-test="nao-encontrado">404</p>}
+      {empty && <p data-test="sem-repositorios">Empty</p>}
     </div>
   );
 }

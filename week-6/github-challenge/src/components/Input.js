@@ -14,6 +14,7 @@ export default function Input({ value, onChange, onKeyPress, hasError }) {
       onKeyPress={onKeyPress}
       style={style}
       placeholder="Insira o nome do usuário"
+      data-test="entrada"
     ></input>
   );
 }
