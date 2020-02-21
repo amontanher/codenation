@@ -18,11 +18,16 @@ function App() {
   const handleEntrada = ({ target }) => {
     const { value } = target;
 
-    if (!regex.test(value)) {
+    if (value.length === 0) {
+      setRepositories([]);
+      setNotFound(false);
+      setEmpty(false);
+    } else if (!regex.test(value)) {
       setError(true);
     } else {
       setError(false);
     }
+
     setEntrada(value);
   };
 
