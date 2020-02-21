@@ -9,7 +9,6 @@ function App() {
   const [error, setError] = React.useState(false);
 
   const handleEntrada = ({ target }) => {
-    debugger;
     const { value } = target;
 
     if (!regex.test(value)) {
@@ -21,7 +20,7 @@ function App() {
   };
 
   const handleKeyPress = ({ key }) => {
-    if (key === 'Enter') {
+    if (key === 'Enter' && !error) {
       getRepositoriesByUser(entrada).then(json => console.log(json));
     }
   };
