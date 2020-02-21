@@ -1,12 +1,11 @@
 import React from 'react';
 
 export default function List({ repositories }) {
-  console.log(repositories);
   return (
-    <ul data-test="repositorio">
+    <ul>
       {repositories.map((item, index) => {
         return (
-          <li key={index}>
+          <li key={index} data-test="repositorio">
             <h1>{item.name}</h1>
             <h2>{item.description}</h2>
             <h3>{item.language}</h3>
