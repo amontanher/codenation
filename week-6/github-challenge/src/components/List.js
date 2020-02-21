@@ -1,16 +1,17 @@
 import React from 'react';
+import CardItem from './Card';
 
 export default function List({ repositories }) {
+  const style = {
+    display: 'flex',
+    listStyleType: 'none'
+  };
   return (
-    <ul>
+    <ul style={style}>
       {repositories.map((item, index) => {
         return (
-          <li key={index} data-test="repositorio">
-            <h1>{item.name}</h1>
-            <h2>{item.description}</h2>
-            <h3>{item.language}</h3>
-            <h4>{item.created_at}</h4>
-			<h5>{item.stargazers_count}</h5>
+          <li key={index}>
+            <CardItem repository={item} />
           </li>
         );
       })}
