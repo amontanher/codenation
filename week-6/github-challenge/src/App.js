@@ -1,6 +1,8 @@
 import React from 'react';
 import Input from './components/Input';
 import List from './components/List';
+import emptyImg from './assets/empty.png';
+import notfound from './assets/notfound.png';
 
 import { getRepositoriesByUser } from './services/api';
 
@@ -58,8 +60,20 @@ function App() {
       />
       {error && <p>User inválido</p>}
       <List repositories={repositories} />
-      {notFound && <p data-test="nao-encontrado">404</p>}
-      {empty && <p data-test="sem-repositorios">Empty</p>}
+      {notFound && (
+        <img
+          data-test="nao-encontrado"
+          src={notfound}
+          alt="Username not found."
+        />
+      )}
+      {empty && (
+        <img
+          data-test="sem-repositorios"
+          src={emptyImg}
+          alt="Empty repository"
+        />
+      )}
     </div>
   );
 }
