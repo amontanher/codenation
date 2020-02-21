@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from './components/Input';
+import List from './components/List';
+
 import { getRepositoriesByUser } from './services/api';
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
         hasError={error}
       />
       {error && <p>User inválido</p>}
+      <List repositories={repositories} />
     </div>
   );
 }
