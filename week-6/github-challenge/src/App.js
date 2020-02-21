@@ -7,6 +7,9 @@ function App() {
 
   const [entrada, setEntrada] = React.useState('');
   const [error, setError] = React.useState(false);
+  const [notFound, setNotFound] = React.useState(false);
+  const [empty, setEmpty] = React.useState(false);
+  const [repositories, setRepositories] = React.useState([]);
 
   const handleEntrada = ({ target }) => {
     const { value } = target;
@@ -19,9 +22,15 @@ function App() {
     setEntrada(value);
   };
 
-  const handleKeyPress = ({ key }) => {
+  const handleKeyPress = async ({ key }) => {
     if (key === 'Enter' && !error) {
-      getRepositoriesByUser(entrada).then(json => console.log(json));
+      await getRepositoriesByUser(entrada).then(r => handleResponse(r));
+    }
+  };
+
+  const handleResponse = r => {
+    if (r.status === 200) {
+      setRepositories(r.repositories);
     }
   };
 

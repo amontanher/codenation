@@ -1,3 +1,6 @@
-export const getRepositoriesByUser = (name) => {
-    return fetch(`https://api.github.com/users/${name}/repos`).then(r => r.json());
-}
+export const getRepositoriesByUser = async name => {
+  const data = await fetch(`https://api.github.com/users/${name}/repos`);
+  const repositories = await data.json();
+
+  return { repositories, status: data.status };
+};
