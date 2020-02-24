@@ -2,6 +2,7 @@ import React from 'react';
 import Container from './components/Container';
 import Question from './components/Question';
 import Result from './components/Result';
+import Header from './components/Header';
 
 function App() {
   const [perguntasRespondidas, setPerguntasRespondidas] = React.useState([]);
@@ -65,6 +66,7 @@ function App() {
 
   return (
     <Container>
+      <Header/>
       {questions.map((question, index) => {
         return (
           <Question
