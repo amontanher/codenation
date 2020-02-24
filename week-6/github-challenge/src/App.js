@@ -3,6 +3,8 @@ import Input from './components/Input';
 import List from './components/List';
 import emptyImg from './assets/empty.png';
 import notfound from './assets/notfound.png';
+import Grid from '@material-ui/core/Grid';
+import css from '../src/App.css';
 
 import { getRepositoriesByUser } from './services/api';
 
@@ -55,15 +57,22 @@ function App() {
 
   return (
     <div>
-      <h3>GitHub</h3>
-      <p>Veja os repositórios do seu usuário favorito!</p>
-      <Input
-        value={entrada}
-        onChange={handleEntrada}
-        onKeyPress={handleKeyPress}
-        hasError={error}
-      />
-      {error && <p>User inválido</p>}
+      <Grid container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        xs={5}
+      >
+        <h3>GitHub</h3>
+        <p>Veja os repositórios do seu usuário favorito!</p>
+        <Input
+          value={entrada}
+          onChange={handleEntrada}
+          onKeyPress={handleKeyPress}
+          hasError={error}
+        />
+        {error && <p>User inválido</p>}
+      </Grid>
       <List repositories={repositories} />
       {notFound && (
         <img
