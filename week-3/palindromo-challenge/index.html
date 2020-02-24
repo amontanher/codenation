@@ -1,22 +1,38 @@
 <html>
   <head>
-    <title>Verificador de Palíndromo</title>
+	<title>Verificador de Palíndromo</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		crossorigin="anonymous"
+  	/>
   </head>
 <body>
-	<p>Verificador de Palíndromo</p>
-	<button data-test="limpar-dados" id="delete-all">Apagar Histórico</button>
 
-	<form id="form-palindromo">
-		<input placeholder="Palíndromo" type="text" name="palindromo" id="inputPalindromo" data-test="entrada">
-	</form>
-
-	<table id="table-palindromos">
-		<thead>
-			<th>Frase</th>
-			<th>Palíndromo</th>
-		</thead>
-		<tbody></tbody>
-	</table>
+	<section style="padding-top: 40px;">
+		<div class="container">
+			<div class="card">
+				<div class="card-header d-flex justify-content-between align-items-center">
+					<p>Verificador de Palíndromo</p>
+					<button data-test="limpar-dados" id="delete-all">Apagar Histórico</button>
+				</div>
+				<div class="card-body">
+					<form id="form-palindromo">
+						<div class="form-group">
+							<input placeholder="Palíndromo" type="text" name="palindromo" id="inputPalindromo" data-test="entrada">
+						</div>
+					</form>
+				</div>
+			</div>
+		<table class="table table-striped table-bordered" id="table-palindromos">
+			<thead>
+				<th scope="col">Frase</th>
+				<th scope="col">Palíndromo</th>
+			</thead>
+			<tbody></tbody>
+		</table>
+		</div>
+	</section>
 	<script>
 		const inputPalindromo = document.querySelector("#inputPalindromo");
 		const btnDeleteAll = document.querySelector("#delete-all");
