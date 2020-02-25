@@ -4,6 +4,13 @@ import { Heading, Box, Button, Container } from 'react-bulma-components';
 function Question(props) {
 
   const getColor = answer => {
+    if (answer === undefined)
+      return null
+    else if (answer.isCorrect === 'correta') {
+      return 'success'
+    } else {
+      return 'danger'
+    }
   }
 
   return (

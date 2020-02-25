@@ -14,10 +14,10 @@ function App() {
       correct: 2,
       title: 'What is the capital of Argentina?',
       options: [
-        { id: 1, cap: 'Mendoza'},
-        { id: 2, cap: 'Buenos Aires'},
-        { id: 3, cap: 'Bariloche'},
-        { id: 4, cap: 'Ushuaia'}
+        { id: 1, cap: 'Mendoza' },
+        { id: 2, cap: 'Buenos Aires' },
+        { id: 3, cap: 'Bariloche' },
+        { id: 4, cap: 'Ushuaia' }
       ]
     },
     {
@@ -25,10 +25,10 @@ function App() {
       correct: 3,
       title: 'What is the capital of Bolívia?',
       options: [
-        { id: 1, cap: 'Santa Cruz'},
-        { id: 2, cap: 'Sucre'},
-        { id: 3, cap: 'La Paz'},
-        { id: 4, cap: 'Cochabamba'}
+        { id: 1, cap: 'Santa Cruz' },
+        { id: 2, cap: 'Sucre' },
+        { id: 3, cap: 'La Paz' },
+        { id: 4, cap: 'Cochabamba' }
       ]
     },
     {
@@ -36,10 +36,10 @@ function App() {
       correct: 4,
       title: 'What is the capital of Uruguai?',
       options: [
-        { id: 1, cap: 'Punta del Este'},
-        { id: 2, cap: 'Colônia do Sacramento'},
-        { id: 3, cap: 'Salto'},
-        { id: 4, cap: 'Montevidéu'}
+        { id: 1, cap: 'Punta del Este' },
+        { id: 2, cap: 'Colônia do Sacramento' },
+        { id: 3, cap: 'Salto' },
+        { id: 4, cap: 'Montevidéu' }
       ]
     }
   ];
@@ -47,12 +47,12 @@ function App() {
   const handleValidate = (question, idAnswered) => {
     const jaRespondida = perguntasRespondidas.filter(item => item === question.id);
 
-    if(!jaRespondida.length){
-      if(idAnswered === question.correct){
+    if (!jaRespondida.length) {
+      if (idAnswered === question.correct) {
         setAcertos(acertos + 1);
-        setRespostas({...respostas, [question.id]:{isCorrect:"correta"}});
-      }else{
-        setRespostas({...respostas, [question.id]:{isCorrect:"errada"}});
+        setRespostas({ ...respostas, [question.id]: { isCorrect: "correta" } });
+      } else {
+        setRespostas({ ...respostas, [question.id]: { isCorrect: "errada" } });
       }
       setPerguntasRespondidas([...perguntasRespondidas, question.id]);
     }
@@ -66,7 +66,7 @@ function App() {
 
   return (
     <Container>
-      <Header/>
+      <Header />
       {questions.map((question, index) => {
         return (
           <Question
@@ -77,7 +77,8 @@ function App() {
           />
         );
       })}
-      <Result acertos={acertos} onClick={handleRefazer} total={questions.length}/>
+      {perguntasRespondidas.length === questions.length &&
+        <Result acertos={acertos} onClick={handleRefazer} total={questions.length} />}
     </Container>
   );
 }
