@@ -12,7 +12,7 @@ function App() {
     {
       id: 1,
       correct: 2,
-      title: 'Qual é a capital da Argentina?',
+      title: 'What is the capital of Argentina?',
       options: [
         { id: 1, cap: 'Mendoza'},
         { id: 2, cap: 'Buenos Aires'},
@@ -23,7 +23,7 @@ function App() {
     {
       id: 2,
       correct: 3,
-      title: 'Qual é a capital da Bolívia?',
+      title: 'What is the capital of Bolívia?',
       options: [
         { id: 1, cap: 'Santa Cruz'},
         { id: 2, cap: 'Sucre'},
@@ -34,7 +34,7 @@ function App() {
     {
       id: 3,
       correct: 4,
-      title: 'Qual é a capital do Uruguai?',
+      title: 'What is the capital of Uruguai?',
       options: [
         { id: 1, cap: 'Punta del Este'},
         { id: 2, cap: 'Colônia do Sacramento'},
