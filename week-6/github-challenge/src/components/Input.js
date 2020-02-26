@@ -1,4 +1,5 @@
 import React from 'react';
+import { TextField } from '@material-ui/core';
 
 export default function Input({ value, onChange, onKeyPress, hasError }) {
   const style = {};
@@ -8,13 +9,15 @@ export default function Input({ value, onChange, onKeyPress, hasError }) {
   }
 
   return (
-    <input
+    <TextField
+      id="outlined-search"
+      type="search"
       value={value}
       onChange={onChange}
       onKeyPress={onKeyPress}
       style={style}
       placeholder="Insira o nome do usuário"
       data-test="entrada"
-    ></input>
+    />
   );
 }
