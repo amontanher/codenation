@@ -26,17 +26,17 @@ function App() {
    */
   const handleKeyPress = event => {
     if (event.key === 'Enter') {
-      // getCharactersByName(entrada)
-      //   .then(json => setHeroes(json.data.results))
-      //   .catch(e => {
-      //     //fazer a logica do 404 aqui
-      //     setHeroes([]);
-      //   });
+      getCharactersByName(entrada)
+        .then(json => setHeroes(json.data.results))
+        .catch(e => {
+          //fazer a logica do 404 aqui
+          setHeroes([]);
+        });
     }
   };
 
   React.useEffect(() => {
-    // getCharacters().then(json => setHeroes(json.data.results));
+    getCharacters().then(json => setHeroes(json.data.results));
   }, []);
 
   return (

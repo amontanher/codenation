@@ -1,16 +1,14 @@
 import React from 'react';
-import Hero from './Hero'
-import Title from './Title'
+import Hero from './Hero';
 
 export default function Heroes({ heroes }) {
-    return (
-        <section>
-            <Title title="Super Heroes" />
-            <div>
-                {heroes.map(hero => {
-                    return <Hero key={hero.id} hero={hero}/>
-                })}
-            </div>
-        </section>
-    )
+  return (
+    <section className="section">
+      <div className="container">
+        {heroes.map(hero => {
+          return <Hero key={hero.id} hero={hero} />;
+        })}
+      </div>
+    </section>
+  );
 }
