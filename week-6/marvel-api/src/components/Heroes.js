@@ -2,9 +2,11 @@ import React from 'react';
 import Hero from './Hero';
 
 export default function Heroes({ heroes }) {
+  const style = {};
+
   return (
-    <section className="section">
-      <div className="container">
+    <section>
+      <div style={style}>
         {heroes.map(hero => {
           return <Hero key={hero.id} hero={hero} />;
         })}
