@@ -10,6 +10,7 @@ export default function Header({ size, handleChange }) {
       </div>
       <div>
         <select onChange={handleChange}>
+          <option value="NA">Select Module</option>
           <option value="0">Module 1</option>
           <option value="1">Module 2</option>
           <option value="2">Module 3</option>
