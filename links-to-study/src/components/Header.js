@@ -1,7 +1,7 @@
 import React from 'react';
 import './../style/HeaderStyle.css';
 
-export default function Header({ size, module, handleChange }) {
+export default function Header({ size, handleChange }) {
   return (
     <div id="head">
       <div id="title">
@@ -9,7 +9,7 @@ export default function Header({ size, module, handleChange }) {
         <h4>Jornada de desafios de React</h4>
       </div>
       <div>
-        <select value={module} onChange={handleChange}>
+        <select onChange={handleChange}>
           <option value="0">Module 1</option>
           <option value="1">Module 2</option>
           <option value="2">Module 3</option>
