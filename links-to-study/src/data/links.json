@@ -1,0 +1,163 @@
+{
+  "contents": [
+    {
+      "module": 1,
+      "links": [
+        {
+          "title": "Building Your First Web Page - Learn to Code HTML & CSS",
+          "url": "https://learn.shayhowe.com/html-css/building-your-first-web-page/"
+        },
+        {
+          "title": "HTML5 Semantic Elements",
+          "url": "https://www.w3schools.com/html/html5_semantic_elements.asp"
+        },
+        {
+          "title": "A Complete Guide to Flexbox | CSS-Tricks",
+          "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+        },
+        { "title": "Flexbox Froggy", "url": "https://flexboxfroggy.com/" },
+        {
+          "title": "Flexbox Tutorial - Learn CSS Flexbox For Free",
+          "url": "https://scrimba.com/g/gflexbox"
+        },
+        {
+          "title": "APRENDA HTML5 E CSS3 - #1 Introdução e configuração do ambiente",
+          "url": "https://www.youtube.com/watch?v=014fy8sGPto"
+        }
+      ]
+    },
+    {
+      "module": 2,
+      "links": [
+        {
+          "title": "Você precisa de um Framework CSS?",
+          "url": "https://medium.com/@simoneas02/voc%C3%AA-precisa-de-um-framework-css-922c02ade6a5"
+        },
+        {
+          "title": "Quando utilizar (ou não) frameworks CSS",
+          "url": "https://tableless.com.br/quando-utilizar-ou-nao-frameworks-css/"
+        },
+        {
+          "title": "Bootstrap em Português",
+          "url": "https://getbootstrap.com.br/"
+        },
+        {
+          "title": "Bulma: Free, open source, & modern CSS framework based on Flexbox",
+          "url": "https://bulma.io/"
+        },
+        {
+          "title": "Element - The world's most popular Vue UI framework",
+          "url": "https://element.eleme.io/#/en-US"
+        }
+      ]
+    },
+    {
+      "module": 3,
+      "links": [
+        {
+          "title": "Palíndromo",
+          "url": "https://pt.wikipedia.org/wiki/Pal%C3%ADndromo"
+        },
+        {
+          "title": "JavaScript basics",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics"
+        },
+        {
+          "title": "Learn JavaScript - Full Course for Beginners",
+          "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg"
+        }
+      ]
+    },
+    {
+      "module": 4,
+      "links": [
+        {
+          "title": "React Bulma Components",
+          "url": "https://react-bulma.dev/en"
+        },
+        {
+          "title": "React Bootstrap",
+          "url": "https://react-bootstrap.github.io/"
+        },
+        {
+          "title": "O Guia do ES6: TUDO que você precisa saber",
+          "url": "https://medium.com/@matheusml/o-guia-do-es6-tudo-que-voc%C3%AA-precisa-saber-8c287876325f"
+        },
+        {
+          "title": "React Tutorial: Learn React JS For Free",
+          "url": "https://scrimba.com/g/glearnreact"
+        },
+        {
+          "title": "Getting Started – React",
+          "url": "https://reactjs.org/docs/getting-started.html"
+        },
+        {
+          "title": "Do You React?",
+          "url": "https://laracasts.com/series/do-you-react"
+        },
+        {
+          "title": "React Getting Started",
+          "url": "https://www.w3schools.com/react/react_getstarted.asp"
+        }
+      ]
+    },
+    {
+      "module": 5,
+      "links": [
+        {
+          "title": "Create React App · Set up a modern web app by running one command.",
+          "url": "https://create-react-app.dev/"
+        },
+        {
+          "title": "Criando Minha Primeira App Com React",
+          "url": "https://blog.matheuscastiglioni.com.br/criando-minha-primeira-app-com-react/"
+        },
+        {
+          "title": "Componentes e Props - React",
+          "url": "https://pt-br.reactjs.org/docs/components-and-props.html"
+        },
+        {
+          "title": "Introduzindo JSX – React",
+          "url": "https://pt-br.reactjs.org/docs/introducing-jsx.html"
+        }
+      ]
+    },
+    {
+      "module": 6,
+      "links": [
+        {
+          "title": "Formulários – React",
+          "url": "https://pt-br.reactjs.org/docs/forms.html"
+        },
+        {
+          "title": "React Form Validation with Formik and Yup",
+          "url": "https://hackernoon.com/react-form-validation-with-formik-and-yup-8b76bda62e10"
+        },
+        {
+          "title": "Trabalhando Com Promises Em Javascript",
+          "url": "https://blog.matheuscastiglioni.com.br/trabalhando-com-promises-em-javascript/"
+        },
+        {
+          "title": "O que é REST e RESTful?",
+          "url": "https://pt.stackoverflow.com/questions/45783/o-que-%C3%A9-rest-e-restful"
+        },
+        {
+          "title": "Usando Fetch",
+          "url": "https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch"
+        },
+        {
+          "title": "Exploring Async/Await Functions in JavaScript",
+          "url": "https://alligator.io/js/async-functions/"
+        },
+        {
+          "title": "JavaScript: Armadilhas do Async/Await em loops",
+          "url": "https://medium.com/@oieduardorabelo/javascript-armadilhas-do-asyn-await-em-loops-1cdad44db7f0"
+        },
+        {
+          "title": "List user repositories",
+          "url": "https://developer.github.com/v3/repos/#list-user-repositories"
+        }
+      ]
+    }
+  ]
+}
