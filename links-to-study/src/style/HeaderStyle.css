@@ -2,3 +2,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+select {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
