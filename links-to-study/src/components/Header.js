@@ -2,6 +2,16 @@ import React from 'react';
 import './../style/HeaderStyle.css';
 
 export default function Header({ size, handleChange }) {
+  const options = [];
+
+  for (let i = 0; i < size; i++) {
+    options.push(
+      <option key={i} value={i}>
+        Module {i + 1}
+      </option>
+    );
+  }
+
   return (
     <div id="head">
       <div id="title">
@@ -11,12 +21,7 @@ export default function Header({ size, handleChange }) {
       <div>
         <select onChange={handleChange}>
           <option value="NA">Select Module</option>
-          <option value="0">Module 1</option>
-          <option value="1">Module 2</option>
-          <option value="2">Module 3</option>
-          <option value="3">Module 4</option>
-          <option value="4">Module 5</option>
-          <option value="5">Module 6</option>
+          {options}
         </select>
       </div>
     </div>
