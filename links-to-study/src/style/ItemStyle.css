@@ -25,3 +25,17 @@
 #link:hover {
   background-color: grey;
 }
+
+@media (max-width: 1000px) {
+  #card {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #link {
+    margin-top: 10px;
+    padding: 7px 15px;
+  }
+}
