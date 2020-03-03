@@ -6,7 +6,9 @@ export default function Thread({ thread }) {
     <div data-test="thread">
       <p>{thread.title}</p>
       <p>{thread.body}</p>
-      <Link to="/">Continue lendo</Link>
+      <Link to={`/thread/${thread.slug}`} data-test="link">
+        Continue lendo
+      </Link>
     </div>
   );
 }

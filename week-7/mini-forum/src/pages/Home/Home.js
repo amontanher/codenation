@@ -1,5 +1,6 @@
 import React from 'react';
 import Thread from '../Thread/Thread';
+import data from '../../data/data.json';
 
 export default function Home() {
   const [threads, setThreads] = React.useState([{}]);
@@ -11,13 +12,14 @@ export default function Home() {
   }
 
   React.useEffect(() => {
-    getThreads();
+    // getThreads();
+    setThreads(data.data);
+    console.log(data.data[0]);
   }, []);
 
   return (
     <section>
       {threads.map((item, index) => {
-        console.log(item);
         return <Thread thread={item} key={index} />;
       })}
     </section>
