@@ -5,6 +5,7 @@ import slugExample from '../../data/slugExample';
 
 export default function Slug(props) {
   const [slug, setSlug] = React.useState({});
+  const [user, setUser] = React.useState({});
   const { param } = useParams();
 
   async function getSlug() {
@@ -15,6 +16,7 @@ export default function Slug(props) {
 
   React.useEffect(() => {
     setSlug(slugExample.data);
+    setUser(slugExample.data.user);
     // getSlug();
   }, []);
 
@@ -22,7 +24,13 @@ export default function Slug(props) {
     <div data-test="resposta">
       <h3>{slug.title}</h3>
       <p>{slug.body}</p>
-
+      <div>
+        <div>
+          <p>{user.name}</p>
+          <p>{user.created_at}</p>
+        </div>
+        <p>Total replies {slug.total_replies}</p>
+      </div>
       <Link to="/" data-test="voltar">
         Voltar para Home
       </Link>
