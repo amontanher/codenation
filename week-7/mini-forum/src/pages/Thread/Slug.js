@@ -1,39 +1,60 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router';
-import slugExample from '../../data/slugExample';
+import { Link, Redirect } from 'react-router-dom';
+
+const getBySlug = async slug => {
+  const response = await fetch(`http://localhost:1338/api/threads/${slug}`);
+
+  if (response.status === 404) {
+    return '404';
+  }
+  return response.json();
+};
 
 export default function Slug(props) {
-  const [slug, setSlug] = React.useState({});
-  const [user, setUser] = React.useState({});
-  const { param } = useParams();
-
-  async function getSlug() {
-    let response = await fetch(`http://localhost:1338/api/threads/${param}`);
-    let ret = await response.json();
-    setSlug(ret.data);
-  }
+  const [thread, setThread] = React.useState({});
+  const [show, setShow] = React.useState(false);
 
   React.useEffect(() => {
-    setSlug(slugExample.data);
-    setUser(slugExample.data.user);
-    // getSlug();
+    const slug = props.match.params.slug;
+    getBySlug(slug).then(r => {
+      setThread(r.data);
+      setShow(true);
+      console.log(r.data);
+    });
   }, []);
 
+  if (!thread) {
+    return <Redirect to="/404" />;
+  }
+
   return (
-    <div data-test="resposta">
-      <h3>{slug.title}</h3>
-      <p>{slug.body}</p>
-      <div>
-        <div>
-          <p>{user.name}</p>
-          <p>{user.created_at}</p>
-        </div>
-        <p>Total replies {slug.total_replies}</p>
-      </div>
+    <div>
       <Link to="/" data-test="voltar">
         Voltar para Home
       </Link>
+
+      <div>
+        <h3>{thread.title}</h3>
+        <p>{thread.body}</p>
+        <p>Total replies: {thread.total_replies}</p>
+        {show && (
+          <div>
+            {thread.replies.map((reply, index) => {
+              return (
+                <div key={index} data-test="resposta">
+                  <hr />
+                  <p>
+                    <b>{reply.user.name}</b>
+                  </p>
+                  <p>
+                    <i>{reply.body}</i>
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
