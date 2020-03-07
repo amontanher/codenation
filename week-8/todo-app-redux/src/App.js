@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {addTodo, checkTodo, deleteTodo} from './store/actions/todoActions'
+import {addTodo, checkTodo, deleteTodo, deleteAll} from './store/actions/todoActions'
 import './App.css';
 
 function App() {
@@ -22,11 +22,17 @@ function App() {
     dispatch(deleteTodo(index));
   }
 
+  const handleDeleteAll = () => {
+    dispatch(deleteAll());
+    setTodo('');
+  }
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
         <input type="text" value={todo} onChange={(e)=> setTodo(e.target.value)} />
         <button>SALVAR TODO</button>
+        <button type="button" onClick={handleDeleteAll}>DELETE ALL</button>
       </form>
       {todoList.map(({value, checked}, index) => (
         <>

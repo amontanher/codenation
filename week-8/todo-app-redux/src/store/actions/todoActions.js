@@ -9,3 +9,7 @@ export const checkTodo = (index) => {
 export const deleteTodo = (index) => {
     return ({ type: 'DELETE_TODO', index})
 }
+
+export const deleteAll = () => {
+    return ({type: 'DELETE_ALL_TODO'})
+}
