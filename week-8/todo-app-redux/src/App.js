@@ -37,20 +37,21 @@ function App() {
         <p>To get started, add some items to your list:</p>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="I want to do..." value={todo} onChange={(e) => setTodo(e.target.value)} />
-          <button>SALVAR TODO</button>
-          <button type="button" onClick={handleDeleteAll}>DELETE ALL</button>
+          <button>+</button>
+          {/* <button type="button" onClick={handleDeleteAll}>DELETE ALL</button> */}
         </form>
       </section>
-      <div>
+      <section>
         {todoList.map(({ value, checked }, index) => (
-          <>
+          <div className="todo">
             <p className={`${checked ? 'checked' : ''}`}>{value}</p>
-            <button onClick={() => handleChecked(index)}>{checked ? 'NÃO FEITO' : 'FEITO'}</button>
-            <button onClick={() => handleDelete(index)}>APAGAR</button>
-
-          </>
+            <div className="actions">
+              <button onClick={() => handleChecked(index)}>{checked ? 'NÃO FEITO' : 'FEITO'}</button>
+              <button onClick={() => handleDelete(index)}>APAGAR</button>
+            </div>
+          </div>
         ))}
-      </div>
+      </section>
     </div>
   );
 }

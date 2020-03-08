@@ -41,3 +41,26 @@ header{
   border-radius: 5px;
   padding: 5px;
 }
+
+.welcome button{
+  width: 30px;
+  font-size: 18px;
+  margin: 5px;
+  background-color: #ced9db;
+  color:white;
+  cursor: pointer;
+}
+
+.welcome button:hover{
+  background-color: black;
+}
+
+.todo{
+  width: 600px;
+  padding:10px;
+  margin: 10px;
+  border: 2px solid #ECF0F1;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
