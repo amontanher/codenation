@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, checkTodo, deleteTodo, deleteAll } from './store/actions/todoActions'
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faCheck, faBullseye } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const [todo, setTodo] = useState('');
@@ -45,9 +47,9 @@ function App() {
         {todoList.map(({ value, checked }, index) => (
           <div className="todo">
             <p className={`${checked ? 'checked' : ''}`}>{value}</p>
-            <div className="actions">
-              <button onClick={() => handleChecked(index)}>{checked ? 'NÃO FEITO' : 'FEITO'}</button>
-              <button onClick={() => handleDelete(index)}>APAGAR</button>
+            <div>
+              {checked ? <FontAwesomeIcon icon={faCheck} onClick={() => handleChecked(index)} /> : <FontAwesomeIcon icon={faBullseye} onClick={() => handleChecked(index)} />}
+              <FontAwesomeIcon icon={faTrash} color="red" onClick={() => handleDelete(index)} className="trash" />
             </div>
           </div>
         ))}

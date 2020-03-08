@@ -1,5 +1,5 @@
 const initialState = {
-    todoList: [{ value: 'ABC', checked: false }, { value: 'DEF', checked: false }]
+    todoList: [{ value: 'reactjsexample.com', checked: true }, { value: 'google.com', checked: false }]
 };
 
 export default function userReducer(state = initialState, action) {
