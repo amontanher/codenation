@@ -179,6 +179,23 @@
           "url": "https://www.taniarascia.com/using-react-router-spa/"
         }
       ]
+    },
+    {
+      "module": 8,
+      "links": [
+        {
+          "title": "Redux - A Predictable State Container for JS Apps",
+          "url": "https://redux.js.org/"
+        },
+        {
+          "title": "Gerenciando estado de componentes React com o Redux",
+          "url": "https://medium.com/desenvolvimento-com-react/estado-componentes-react-redux-fcd899676f6a"
+        },
+        {
+          "title": "Getting Started with Redux",
+          "url": "https://egghead.io/courses/getting-started-with-redux"
+        }
+      ]
     }
   ]
 }
