@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../pages/NotFound/NotFound';
 import Home from '../pages/Home/Home';
+import Edit from '../pages/Edit/Edit'
 
 export default function Routes() {
   return (
@@ -11,7 +12,7 @@ export default function Routes() {
       <Route
         exact
         path="/:contato_id/edit"
-        render={() => <div>EDIT</div>}
+        component={Edit}
       ></Route>
       <Route exact path="/404" component={NotFound}></Route>
     </Switch>
