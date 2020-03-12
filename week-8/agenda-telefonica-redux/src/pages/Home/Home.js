@@ -1,5 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-export default function Home(){
-    return <div>Home</div>;
+export default function Home() {
+    const { contatos } = useSelector(({ contatos }) => contatos)
+    return (
+        <div>
+            {contatos.map((contato, index) => (
+                <div key={index}>
+                    <h3>{contato.nome}</h3>
+                    <p>{contato.email}</p>
+                    <Link to={`/${contato.id}/edit`}>Editar</Link>
+                    <br/>
+                    <Link to="/">Apagar</Link>
+                </div>
+            ))}
+        </div>
+    );
 }
