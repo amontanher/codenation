@@ -16,7 +16,7 @@ export default function Header({ size, handleChange }) {
     <div id="head">
       <div id="title">
         <h3>React</h3>
-        <h4>Jornada de desafios de React</h4>
+        <h4>React Challenge Journey</h4>
       </div>
       <div>
         <select onChange={handleChange}>
