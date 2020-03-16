@@ -196,6 +196,33 @@
           "url": "https://egghead.io/courses/getting-started-with-redux"
         }
       ]
-    }
+    },
+    {
+      "module": 9,
+      "links": [
+        {
+          "title": "Netlify: All-in-one platform for automating modern web projects",
+          "url": "https://www.netlify.com/"
+        },
+        {
+          "title": "GitHub Pages",
+          "url": "https://pages.github.com/"
+        },
+        {
+          "title": "Cloudflare – A empresa de desempenho e segurança na Web",
+          "url": "https://www.cloudflare.com/pt-br/"
+        },
+        { "title": "How to set up & deploy your React app from scratch using Webpack and Babel", 
+		  "url": "https://flexboxfroggy.com/" },
+        {
+          "title": "Flexbox Tutorial - Learn CSS Flexbox For Free",
+          "url": "https://www.freecodecamp.org/news/how-to-set-up-deploy-your-react-app-from-scratch-using-webpack-and-babel-a669891033d4/"
+        },
+        {
+          "title": "Deploying React Applications to Github Pages",
+          "url": "https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a"
+        }
+      ]
+    }	
   ]
 }
