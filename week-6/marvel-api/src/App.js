@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Heroes from './components/Heroes';
 import { getCharacters, getCharactersByName } from './services/api';
 
+import '../src/components/styles.css';
+
 function App() {
   const [entrada, setEntrada] = React.useState('');
   const [erro, setErro] = React.useState(null);

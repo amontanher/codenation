@@ -3,7 +3,7 @@ import Input from './Input';
 
 export default function Header({ value, onChange, erro, onKeyPress }) {
   return (
-    <div>
+    <div className="header-container">
       <p>Hero Search</p>
       <Input
         value={value}

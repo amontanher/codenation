@@ -3,11 +3,11 @@ import React from 'react';
 export default function Hero({ hero }) {
   const img = hero.thumbnail.path + '.' + hero.thumbnail.extension;
   return (
-    <div className="container">
+    <div  className="hero-item">
       <div>
         <div>
           <div>
-            <img src={img} alt={hero.name} />
+            <img src={img} alt={hero.name} width="200" height="200"/>
           </div>
           <div>
             <div>
@@ -15,8 +15,7 @@ export default function Hero({ hero }) {
             </div>
           </div>
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            nec iaculis mauris.
+            Descrição
             <br />
           </div>
         </div>

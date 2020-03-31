@@ -12,7 +12,7 @@ export default function Input({ value, onChange, erro, onKeyPress }) {
     };
 
     return (
-        <div>
+        <div className="search-input">
             <input style={style} type="text" value={value} onChange={onChange} onKeyPress={onKeyPress} />
             <p>{erro}</p>
         </div>
