@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero({ hero }) {
   const img = hero.thumbnail.path + '.' + hero.thumbnail.extension;
@@ -11,7 +12,8 @@ export default function Hero({ hero }) {
           </div>
           <div>
             <div>
-              <p>{hero.name}</p>
+                <p>{hero.name}</p>
+              
             </div>
           </div>
         </div>
