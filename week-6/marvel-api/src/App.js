@@ -1,7 +1,10 @@
 import React from 'react';
+
 import Header from './components/Header';
 import Heroes from './components/Heroes';
 import NotFound from './components/NotFound';
+import Loader from './components/Loarder';
+
 import { getCharacters, getCharactersByName } from './services/api';
 
 import '../src/components/styles.css';
@@ -10,6 +13,8 @@ function App() {
   const [entrada, setEntrada] = React.useState('');
   const [erro, setErro] = React.useState(null);
   const [heroes, setHeroes] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [heroNotFound, setHeroNotFound] = React.useState(false);
 
   const handleChangeInput = ({ target }) => {
     const { value } = target;
@@ -30,16 +35,27 @@ function App() {
   const handleKeyPress = event => {
     if (event.key === 'Enter') {
       getCharactersByName(entrada)
-        .then(json => setHeroes(json.data.results))
+        .then(json => {
+          setHeroes(json.data.results);
+
+          if (json.data.results.length) {
+            setHeroNotFound(false);
+          } else {
+            setHeroNotFound(true);
+          }
+
+        })
         .catch(e => {
-          //fazer a logica do 404 aqui
           setHeroes([]);
         });
     }
   };
 
   React.useEffect(() => {
-    getCharacters().then(json => setHeroes(json.data.results));
+    getCharacters().then(json => {
+      setHeroes(json.data.results);
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -50,7 +66,8 @@ function App() {
         erro={erro}
         onKeyPress={handleKeyPress}
       />
-      {heroes.length ? <Heroes heroes={heroes} /> : <NotFound/>}
+      {loading && <Loader />}
+      {heroNotFound ? <NotFound /> : <Heroes heroes={heroes} />}
     </div>
   );
 }
