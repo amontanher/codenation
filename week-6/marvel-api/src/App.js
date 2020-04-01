@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Heroes from './components/Heroes';
+import NotFound from './components/NotFound';
 import { getCharacters, getCharactersByName } from './services/api';
 
 import '../src/components/styles.css';
@@ -49,7 +50,7 @@ function App() {
         erro={erro}
         onKeyPress={handleKeyPress}
       />
-      {heroes.length ? <Heroes heroes={heroes} /> : <p>404 - não encontrado</p>}
+      {heroes.length ? <Heroes heroes={heroes} /> : <NotFound/>}
     </div>
   );
 }

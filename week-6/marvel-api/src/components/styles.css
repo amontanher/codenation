@@ -38,7 +38,6 @@
 }
 
 .heroes-grid {
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 24px;
@@ -50,4 +49,11 @@
   border-radius: 5px;
   position: relative;
   margin: 10px;
+}
+
+.notfound-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
