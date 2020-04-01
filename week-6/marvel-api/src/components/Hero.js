@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Hero({ hero }) {
-  console.log(hero);
   const img = hero.thumbnail.path + '.' + hero.thumbnail.extension;
   return (
     <div className="hero-item">

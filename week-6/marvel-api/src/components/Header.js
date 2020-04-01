@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './Input';
 
-export default function Header({ value, onChange, erro, onKeyPress }) {
+export default function Header({ value, onChange, erro, onKeyPress, onClick }) {
   return (
     <div className="header-container">
       <p>Hero Search</p>
@@ -10,6 +10,7 @@ export default function Header({ value, onChange, erro, onKeyPress }) {
         onChange={onChange}
         erro={erro}
         onKeyPress={onKeyPress}
+        onClick={onClick}
       />
     </div>
   );

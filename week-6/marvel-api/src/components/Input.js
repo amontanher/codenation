@@ -1,20 +1,18 @@
 import React from 'react';
+import { FiTrash2 } from "react-icons/fi";
 
-export default function Input({ value, onChange, erro, onKeyPress }) {
+export default function Input({ value, onChange, onKeyPress, onClick }) {
     // const { value, onChange } = props; - JS DESTRUCTOR
-
-    const temErro = Boolean(erro)
-
-    const style = {};
-
-    if (temErro) {
-        style.border = "1px solid red";
-    };
 
     return (
         <div className="search-input">
-            <input style={style} type="text" value={value} onChange={onChange} onKeyPress={onKeyPress} />
-            <p>{erro}</p>
+            <input type="text" value={value} onChange={onChange} onKeyPress={onKeyPress} />
+            <span>
+                <FiTrash2
+                    size={24}
+                    color="white"
+                    onClick={onClick} />
+            </span>
         </div>
     )
 }

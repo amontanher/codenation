@@ -11,22 +11,24 @@ import '../src/components/styles.css';
 
 function App() {
   const [entrada, setEntrada] = React.useState('');
-  const [erro, setErro] = React.useState(null);
   const [heroes, setHeroes] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [heroNotFound, setHeroNotFound] = React.useState(false);
 
   const handleChangeInput = ({ target }) => {
     const { value } = target;
-
-    if (value.includes('@')) {
-      setErro('Caracter Inválido');
-    } else {
-      setErro('');
-    }
-
     setEntrada(value);
   };
+
+  const handleTrash = () => {
+    setHeroNotFound(false);
+    setLoading(true);
+    getCharacters().then(json => {
+      setEntrada('');
+      setHeroes(json.data.results);
+      setLoading(false);
+    });
+  }
 
   /**
    *Toda vez que usar async await usar try/catch
@@ -63,8 +65,8 @@ function App() {
       <Header
         value={entrada}
         onChange={handleChangeInput}
-        erro={erro}
         onKeyPress={handleKeyPress}
+        onClick={handleTrash}
       />
       {loading && <Loader />}
       {heroNotFound ? <NotFound /> : <Heroes heroes={heroes} />}
