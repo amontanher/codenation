@@ -2,6 +2,10 @@
 
 GitHub is our social network, and why not use its API along with your new knowledge in asynchronous programming, form validation and APIS consumption to build something new? Your goal is to create an application that lists a GitHub user's repositories!
 
+## Final Result
+
+![](src/assets/githublist.gif)
+
 ## Requirements
 
 You will need Nodejs (LTS or Current) installed on your machine.
