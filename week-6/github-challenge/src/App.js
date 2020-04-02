@@ -3,21 +3,12 @@ import Input from './components/Input';
 import List from './components/List';
 import emptyImg from './assets/empty.png';
 import notfound from './assets/notfound.png';
-import { Grid, Typography } from '@material-ui/core';
-import css from '../src/App.css';
-import { makeStyles } from '@material-ui/core/styles';
+
+import './App.css'
 
 import { getRepositoriesByUser } from './services/api';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    marginTop: 25,
-    marginBottom: 25
-  }
-}));
-
 function App() {
-  const classes = useStyles();
 
   const regex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
 
@@ -66,46 +57,37 @@ function App() {
   };
 
   return (
-    <div>
-      <Grid
-        container
-        className={classes.root}
-        direction="column"
-        alignContent="center"
-      >
-        <Typography align="center" component="h3" variant="display3">
-          GitHub
-        </Typography>
-        <p>Veja os repositórios do seu usuário favorito!</p>
-        <Input
-          value={entrada}
-          onChange={handleEntrada}
-          onKeyPress={handleKeyPress}
-          hasError={error}
-        />
-        {error && <p>User inválido</p>}
+    <div className="container">
+      <h2>GitHub</h2>
+      <p>Veja os repositórios do seu usuário favorito!</p>
+      <Input
+        value={entrada}
+        onChange={handleEntrada}
+        onKeyPress={handleKeyPress}
+        hasError={error}
+      />
+      {error && <p>User inválido</p>}
 
-        {notFound && (
-          <div>
-            <br></br>
-            <img
-              data-test="nao-encontrado"
-              src={notfound}
-              alt="Username not found."
-            />
-          </div>
-        )}
-        {empty && (
-          <div>
-            <br></br>
-            <img
-              data-test="sem-repositorios"
-              src={emptyImg}
-              alt="Empty repository"
-            />
-          </div>
-        )}
-      </Grid>
+      {notFound && (
+        <div>
+          <br></br>
+          <img
+            data-test="nao-encontrado"
+            src={notfound}
+            alt="Username not found."
+          />
+        </div>
+      )}
+      {empty && (
+        <div>
+          <br></br>
+          <img
+            data-test="sem-repositorios"
+            src={emptyImg}
+            alt="Empty repository"
+          />
+        </div>
+      )}
       <List repositories={repositories} />
     </div>
   );

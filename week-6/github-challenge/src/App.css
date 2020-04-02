@@ -1,6 +1,83 @@
-*{
-    font-family: Roboto, sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f6;
+}
+
+.container {
+  width: 500px;
+  height: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  margin: 20px 0 0 20px;
+}
+
+.container h2,
+p,
+.input-search {
+  margin: 10px 0 10px 25px;
+}
+
+.li-card {
+  width: 400px;
+  height: 100%;
+  border: 1px solid lightgray;
+  margin: 0 0 20px 0;
+}
+
+.input-search {
+  border: 1px solid#799ACA;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+  width: 180px;
+}
+
+.card-title {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title h3 {
+  margin: 10px;
+}
+
+.card-header {
+  display: flex;
+  margin: 20px;
+}
+
+.card-header-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.card-title .fa-icon {
+  cursor: pointer;
+  margin: 12px 10px 0 0;
+}
+
+.card-body {
+  margin: 20px;
+}
+
+.card-body-lang{
+  color: #4470B0;
+}
+
+.list-container {
+  margin-left: 20px;
+}
+
+.list-container ul li {
+  list-style: none;
 }
