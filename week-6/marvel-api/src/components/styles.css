@@ -103,3 +103,40 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.back-link{
+  background-color: #ff3860;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  line-height: 50px;
+}
+
+.back-link:hover{
+  opacity: 80%;
+}
+
+.hero-id-container{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.hero-id-image{
+  width: 220px;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.hero-id-itens{
+  width: 800px;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}

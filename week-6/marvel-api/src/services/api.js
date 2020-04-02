@@ -13,3 +13,10 @@ export const getCharactersByName = (name) => {
     return fetch(`${urlGetCharacters}&nameStartsWith=${name}`)
         .then(r => r.json());
 }
+
+export const getCharactersById = (id) => {
+    const urlGetCharactersById = `http://gateway.marvel.com/v1/public/characters/${id}?ts=${TIMESTAMP}&apikey=${APIKEY}&hash=${HASH}`;
+
+    return fetch(urlGetCharactersById)
+        .then(r => r.json());
+}

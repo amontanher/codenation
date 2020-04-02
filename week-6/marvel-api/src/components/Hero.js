@@ -12,8 +12,9 @@ export default function Hero({ hero }) {
           </div>
           <div>
             <div>
+              <Link to={`/hero/${hero.id}`}>
                 <p>{hero.name}</p>
-              
+              </Link>
             </div>
           </div>
         </div>
