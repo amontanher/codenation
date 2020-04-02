@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function CardItem({ repository }) {
   console.log(repository);
   const handleRedirect = url => {
-    window.location.href = url;
+    window.open(url, '_blank');
   };
   return (
     <div className="card-container">
