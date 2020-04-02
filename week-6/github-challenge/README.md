@@ -1,26 +1,26 @@
-# Listar repositórios de usuário do GitHub
+# List GitHub user repositories
 
-O GitHub é a nossa rede social, e por que não usar sua API junto com os seus novos conhecimentos em programação asíncrona, validação de formulários e consumo de APIS pra construir algo novo? O seu objetivo é criar uma aplicação que lista os repositórios de um usuário do GitHub!
+GitHub is our social network, and why not use its API along with your new knowledge in asynchronous programming, form validation and APIS consumption to build something new? Your goal is to create an application that lists a GitHub user's repositories!
 
-## Requisitos
+## Requirements
 
-Você precisará do Nodejs (LTS ou Current) instalado em sua máquina.
+You will need Nodejs (LTS or Current) installed on your machine.
 
-Na primeira execução rodar o comando:
+On the first run, run the command:
 
 ```bash
 $ npm install
 ```
 
-Depois, para começar a desenvolver
+Then, to start developing
 
 ```bash
 $ npm start
 ```
 
-## Tópicos
+## Topics
 
-Com esse desafio, você aprenderá:
+With this challenge, you will learn:
 
 - Promises
 - Forms in React
@@ -28,26 +28,26 @@ Com esse desafio, você aprenderá:
 - Fetch API
 - State
 
-### Tarefas
+### Tasks
 
-- Ler o texto de um `input` para pegar o nome do usuário a ter os repositórios listados assim que o formulário for submetido
-- Pré validar o conteúdo do input de acordo com estas regras:
-  - Somente caracteres alfanuméricos ou um único hífen
-  - Não pode começar ou terminar com hífen
-  - Máximo de 39 caracteres
-- Fazer requisição para o endpoint do GitHub quando apertar `enter` no input somente se o nome de usuário for válido
-- Se o usuário não existir (404) exibir erro de validação de usuário não encontrado
-- Se o usuário não tiver nenhum repositório, exibir um "Empty State" de "O usuário não tem nenhum repositório"
-- Se a request for bem sucessida e o usuário ter 1 ou mais repositórios, liste-os.
-  - Deve-se exibir ao menos informaçōes básicas do repositório (nome, link e número de stars)
+- Read the text of an `input` to get the name of the user to have the repositories listed as soon as the form is submitted
+- Pre-validate the content of the input according to these rules:
+     - Only alphanumeric characters or a single hyphen
+     - Cannot start or end with a hyphen
+     - Maximum of 39 characters
+- Make a request to the GitHub endpoint when pressing `enter` in the input only if the username is valid
+- If the user does not exist (404) display user not found validation error
+- If the user has no repository, display an "Empty State" of "The user has no repository"
+- If the request is successful and the user has 1 or more repositories, list them.
+     - At least basic information about the repository must be displayed (name, link and number of stars)
 
-### Exemplo
+### Example
 
 ![](https://codenation-challenges.s3-us-west-1.amazonaws.com/vue-3/tToalvQ.gif)
 
-### Atenção
+### Attention
 
-O input deve conter um atributo `data-test` com o valor `entrada`
-O container do "404" deve conter uma atributo `data-test` com o valor `nao-encontrado`
-O container do "Empty State" deve conter uma atributo `data-test` com o valor `sem-repositorios`
-Cada container de repositório deve conter uma atributo `data-test` com o valor `repositorio`
+The input must contain a `data-test` attribute with the value `entrada`;
+The "404" container must contain a `data-test` attribute with the value `nao-encontrado`;
+The "Empty State" container must contain a `data-test` attribute with the value `sem-repositorios`;
+Each repository container must contain a `data-test` attribute with the value `repositorio`;
