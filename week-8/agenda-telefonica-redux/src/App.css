@@ -28,7 +28,7 @@ body {
 .back-link{
   text-decoration: none;
   color: #676363;
-  margin-left: 100px;
+  margin-left: 80px;
   font-size: 14px;
 }
 
@@ -44,4 +44,9 @@ body {
 
 .container-contact h3{
   color: #3a3a3a;
+}
+.contact-length{
+  font-size: 14px;
+  color: gray;
+  margin: 3px 0 0 -160px;
 }

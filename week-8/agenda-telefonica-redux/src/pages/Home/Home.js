@@ -8,15 +8,12 @@ import './styles.css';
 export default function Home() {
   const { contatos } = useSelector(({ contatos }) => contatos);
 
-  const handleNewContact = () => {
-    return <Redirect to="/create" />
-  }
-
   return (
     <div className="container">
       <div className="header">
         <h1>Contatos</h1>
-        <Button title="Adicionar Contato" icon="FaPlus" color="#6FB0FC" click={handleNewContact} />
+        <p className="contact-length">({contatos.length})</p>
+        <Button title="Adicionar Contato" icon="FaPlus" color="#6FB0FC" click="/create" />
       </div>
       {contatos.map((contato, index) => (
         <div key={index} className="container-contact">
