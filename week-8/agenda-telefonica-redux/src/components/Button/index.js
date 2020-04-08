@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaPlus, FaSave } from 'react-icons/fa';
 
-export default function Button({ icon, title, color }) {
+export default function Button({ icon, title, color, click }) {
     const style = {
         backgroundColor: color,
         color: 'white',
@@ -11,7 +11,7 @@ export default function Button({ icon, title, color }) {
         cursor: 'pointer'
     };
 
-    return <button style={style}>
+    return <button style={style} onClick={click}>
         {icon === 'FaPlus' ? <FaPlus /> : <FaSave />}
         {title}
     </button>

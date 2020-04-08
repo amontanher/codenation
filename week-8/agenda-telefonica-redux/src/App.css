@@ -11,7 +11,7 @@ body {
 
 .container {
   width: 500px;
-  height: 100px;
+  height: 100%;
   margin: 0 auto;
   margin-top: 40px;
   background-color: #ffffff;
@@ -22,4 +22,26 @@ body {
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.back-link{
+  text-decoration: none;
+  color: #676363;
+  margin-left: 100px;
+  font-size: 14px;
+}
+
+.container-contact{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+}
+
+.container-contact p{
+  color: grey
+}
+
+.container-contact h3{
+  color: #3a3a3a;
 }
