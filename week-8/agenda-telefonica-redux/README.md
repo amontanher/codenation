@@ -1,71 +1,72 @@
 # Criar uma agenda de contatos usando o Redux para gerenciar o estado
 
-Nesta altura do campeonato, já conseguimos observar uma dor recorrente: compartilhar informaçōes com a aplicação inteira.
-O que fazer quando dois componentes precisam dos mesmos dados? E se um deles é responsável por alterar, como imediatamente mandar esta nova informação pro outro sem que tudo vire uma grande bagunça?
-Para isto nós usamos um `gerenciador de estado`, sendo ele o Vuex! Faça uma agenda de contatos para ver o quanto é simples manter dados compartilhados com toda a aplicação quando usamos ele!
+At this point in the championship, we have already seen a recurring pain: sharing information with the entire application.
+What to do when two components need the same data? And if one of them is responsible for changing, how to immediately send this new information to the other without everything becoming a big mess?
+For this we use a `state manager`, which is Redux! Make a contact list to see how simple it is to keep data shared with the entire application when we use it!
 
-## Requisitos
+## Requirements
 
-Você precisará do Nodejs (LTS ou Current) instalado em sua máquina.
-
-Na primeira execução rodar o comando:
+On the first run, run the command:
 
 ```bash
 $ npm install
 ```
 
-Depois, para começar a desenvolver:
+Then, to start developing:
 
 ```bash
 $ npm start
 ```
 
-## Tópicos
+## Topics
 
-Com esse desafio, você aprenderá:
+With this challenge, you will learn:
 
 - Flux pattern
 - Redux
 - Redux Persist
 
-### Tarefas
+### Tasks
 
-- Rota `/`
-  - Deve listar todos os contatos registrados
-    - Cada contato deve ter um `RouterLink` para a página de edição
-    - Cada contato deve ter uma ação de `Remover da Lista`
-  - Exibir no mínimo os campos de `Nome` e `Email`
-  - Conter um `RouterLink` para a página de criar novo contato
-  - Conter o número total de contatos
-  - Se não existir nenhum contato ainda, deve conter um `Empty State`
-- Rota `/create`
-  - Deve ter um formulário para criar um novo contato
-    - Pode conter quantos campos quiser, mas é necessário ter `Nome` e `Email`
-  - Deve ter uma ação de `Criar contato`
-- Rota `/:contato_id/edit`
-  - Deve tentar encontrar o contato via o parametro de ID
-    - Se o contato não existir, redirecionar para a rota `/404`
-    - Se ele existir
-      - Deve ter um formulário para editar um contato
-        - Deve conter os mesmo campos do formulário de criação, porém, devem vir preenchidos com os dados do usuário
-        - Somente ao clicar em salvar que os dados devem ser atualizados
-        - Deve conter uma action de `Salvar`
-- Rota `/404`
-  - Deve conter um link para voltar para a tela inicial
+- Route `/`
+  - Must list all registered contacts
+    - Each contact must have a 'Link' to the edit page
+    - Each contact must have an action of `Remove from List`
+  - Display at least the fields of `Name` and` Email`
+  - Contain a 'Link` to the page to create a new contact
+  - Contain the total number of contacts
+  - If there is no contact yet, it must contain an `Empty State`
+- Route `/create`
+  - Must have a form to create a new contact
+    - It can contain as many fields as you want, but it is necessary to have `Name` and` Email`
+  - There must be an action of `Create contact`
+- Route `/:contato_id/edit`
+  - You must try to find the contact via the ID parameter
+    - If the contact does not exist, redirect to route `/ 404`
+    - If it exists
+      - Must have a form to edit a contact
+      - It must contain the same fields as the creation form, however, they must be filled with the user's data
+      - Only when clicking on save that the data must be updated
+      - Must contain a `Save` action
+- Route `/404`
+  - Must contain a link to return to the home screen
 
-### Exemplo
+### Example
 
 ![](https://codenation-challenges.s3-us-west-1.amazonaws.com/vue-5/0OGbjIr.gif)
 
-### Atenção
+### My Final Result
 
-- Todas as alterações de contato (seja edição ou criação) devem ser persistidas no `LocalStorage`
-- O elemento com o total de contatos deve conter um atributo `data-test` com o valor `total-${totalDeCotnatos}`
-- Cada link de `editar contato` deve conter um atributo `data-test` com o valor `editar`
-- Cada ação de `remover contato` deve conter um atributo `data-test` com o valor `apagar`
-- O container do `Empty State` deve conter um atributo `data-test` com o valor `sem-contatos`
-- O link de `Criar novo contato` deve conter um atributo `data-test` com o valor `novo-contato`
-- O elemento `input` de alteração / cadastro do `nome` do contato, deve contar um atributo `data-test` com o valor `nome`
-- O elemento `input` de alteração / cadastro do `email` do contato, deve contar um atributo `data-test` com o valor `email`
-- A ação de `Criar novo contato` deve conter um atributo `data-test` com o valor `criar`
-- A ação de `Salvar contato` deve conter um atributo `data-test` com o valor `salvar`
+![](src/assets/agenda-redux.gif)
+
+### Attention (Tests)
+
+- The element with the total of contacts must contain an attribute `data-test` with the value` total - $ {totalDeCotnatos} `
+- Each `edit contact` link must contain a` data-test` attribute with the value `edit`
+- Each action of `remove contact` must contain an attribute` data-test` with the value `delete`
+- The `Empty State` container must contain a` data-test` attribute with the value `contactless`
+- The 'Create new contact' link must contain a `data-test` attribute with the value `new-contact`
+- The `input` element for changing/registering the `name` of the contact, must have a `data-test` attribute with the value `name`
+- The `input` element for changing/registering the contact's `email`, must have a `data-test` attribute with the value `email`
+- The action of "Create new contact" must contain an attribute `data-test` with the value `create`
+- The action of `Save contact` must contain an attribute `data-test` with the value `save`
