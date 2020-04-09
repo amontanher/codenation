@@ -34,8 +34,8 @@ export default function Home() {
     <div className="container">
       <div className="header">
         <h1>Contacts</h1>
-        <p className="contact-length">({contactsLength})</p>
-        <Link style={style} to="/create"><FaPlus /> Add Contact</Link>
+        <p className="contact-length" data-test={`total-${contactsLength}`}>({contactsLength})</p>
+        <Link style={style} to="/create" data-test="novo-contato"><FaPlus /> Add Contact</Link>
       </div>
       {contatos.map((contato, index) => (
         <div key={index} className="container-contact">
@@ -44,13 +44,13 @@ export default function Home() {
             <p>{contato.email}</p>
           </div>
           <div className="container-contact-actions">
-            <Link to={`/${index}/edit`} className="act-update"><FaPen color="black" size={12} /></Link>
-            <Link to="#" onClick={() => handleDelete(index)} className="act-delete"><FaTrash color="black" size={12} /></Link>
+            <Link to={`/${index}/edit`} className="act-update" data-test="editar"><FaPen color="black" size={12} /></Link>
+            <Link to="#" onClick={() => handleDelete(index)} className="act-delete" data-test="apagar"><FaTrash color="black" size={12} /></Link>
           </div>
         </div>
       ))}
 
-      {contactsLength > 0 ? '' : <div className="no-contacts"><img src={NoContacts} alt="No Contacts" /></div>}
+      {contactsLength > 0 ? '' : <div className="no-contacts" data-test="sem-contatos"><img src={NoContacts} alt="No Contacts" /></div>}
     </div>
   );
 }

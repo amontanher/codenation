@@ -16,6 +16,7 @@ export default function Routes() {
         component={Edit}
       ></Route>
       <Route exact path="/404" component={NotFound}></Route>
+      <Route exact path="/*" component={NotFound}></Route>
     </Switch>
   );
 }

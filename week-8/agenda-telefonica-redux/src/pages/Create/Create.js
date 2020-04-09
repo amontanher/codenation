@@ -32,17 +32,18 @@ export default function Create({ history }) {
       <div className="header">
         <h1>New contact</h1>
         <Link className="back-link" to="/"><FaArrowLeft />Return</Link>
-        <Link style={style} to="#" onClick={createContact}><FaSave /> Create Contact</Link>
+        <Link style={style} to="#" onClick={createContact} data-test="criar"><FaSave /> Create Contact</Link>
       </div>
       <div className="container-inputs">
         <label>Name</label>
-        <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+        <input type="text" value={nome} data-test="nome" onChange={e => setNome(e.target.value)} />
 
         <label>E-mail</label>
         <input
           type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
+          data-test="email"
         />
       </div>
     </div>

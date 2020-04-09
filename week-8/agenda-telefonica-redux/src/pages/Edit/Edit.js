@@ -46,18 +46,19 @@ export default function Edit({ history, match }) {
                 <h1>{nome}</h1>
                 <div className="header-actions">
                     <Link className="back-link" to="/"><FaArrowLeft />Return</Link>
-                    <Link style={style} to="#" onClick={updateContact}><FaSave /> Save Changes</Link>
+                    <Link style={style} to="#" onClick={updateContact} data-test="salvar"><FaSave /> Save Changes</Link>
                 </div>
             </div>
             <div className="container-inputs">
                 <label>Name</label>
-                <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+                <input type="text" value={nome} data-test="nome" onChange={e => setNome(e.target.value)} />
 
                 <label>E-mail</label>
                 <input
                     type="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    data-test="email"
                 />
             </div>
         </div>
