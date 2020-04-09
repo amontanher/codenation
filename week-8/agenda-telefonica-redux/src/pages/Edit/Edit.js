@@ -32,7 +32,7 @@ export default function Edit({ history, match }) {
         const contact = contatos[contactId];
 
         if (!contact) {
-            return history.push('/');
+            return history.push('/404');
         } else {
             setNome(contact.nome);
             setEmail(contact.email);
