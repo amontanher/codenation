@@ -34,7 +34,9 @@ body {
 
 .container-contact{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 10px 0 10px 0;
 }
 
@@ -71,4 +73,21 @@ body {
 .no-contacts{
   display: flex;
   justify-content: center;
+}
+
+.container-contact-actions a{
+  margin: 5px;
+  text-decoration: none
+}
+
+.act-update{
+  background-color: #F1F3F3;
+  padding: 7px;
+  border-radius: 15px;
+}
+
+.act-delete{
+  background-color: #FBB3B2;
+  padding: 7px;
+  border-radius: 15px;
 }

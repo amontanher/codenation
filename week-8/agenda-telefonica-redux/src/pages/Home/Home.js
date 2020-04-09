@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaPencilAlt, FaPen } from 'react-icons/fa';
 
 import NoContacts from '../../assets/nocontacts.png';
 
@@ -31,12 +31,18 @@ export default function Home() {
       </div>
       {contatos.map((contato, index) => (
         <div key={index} className="container-contact">
-          <h3>{contato.nome}</h3>
-          <p>{contato.email}</p>
+          <div className="container-contact-data">
+            <h3>{contato.nome}</h3>
+            <p>{contato.email}</p>
+          </div>
+          <div className="container-contact-actions">
+            <Link to="/" className="act-update"><FaPencilAlt color="black" size={12}/></Link>
+            <Link to="/" className="act-delete"><FaTrash color="black" size={12}/></Link>
+          </div>
         </div>
       ))}
 
-      {!contatos.length ? '' : <div className="no-contacts"><img src={NoContacts} alt="No Contacts" /></div>}
+      {contatos.length ? '' : <div className="no-contacts"><img src={NoContacts} alt="No Contacts" /></div>}
     </div>
   );
 }

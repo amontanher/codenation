@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContato } from '../../store/actions/contatoActions';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaSave } from 'react-icons/fa';
 
-export default function Create() {
+export default function Create({ history }) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const dispatch = useDispatch();
@@ -12,6 +12,7 @@ export default function Create() {
   const createContact = () => {
     const contato = { nome: nome, email: email };
     dispatch(addContato(contato));
+    history.push('/');
   };
 
   const style = {
