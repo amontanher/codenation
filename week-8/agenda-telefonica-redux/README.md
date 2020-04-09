@@ -1,4 +1,4 @@
-# Criar uma agenda de contatos usando o Redux para gerenciar o estado
+# Create a contact book using Redux to manage the state
 
 At this point in the championship, we have already seen a recurring pain: sharing information with the entire application.
 What to do when two components need the same data? And if one of them is responsible for changing, how to immediately send this new information to the other without everything becoming a big mess?
