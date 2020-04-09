@@ -13,10 +13,12 @@ body {
   width: 500px;
   height: 100%;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 100px;
   background-color: #ffffff;
   border-radius: 5px;
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: #ccc 10px 10px 40px;
 }
 
 .header{
@@ -68,6 +70,7 @@ body {
 .container-inputs label{
   margin-top: 10px;
   margin-bottom: 3px;
+  font-size: 15px;
 }
 
 .no-contacts{
@@ -86,8 +89,18 @@ body {
   border-radius: 15px;
 }
 
+.act-update:hover, .act-delete:hover{
+  opacity: 80%;
+}
+
 .act-delete{
   background-color: #FBB3B2;
   padding: 7px;
   border-radius: 15px;
+}
+
+.header-actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
