@@ -1,7 +1,9 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+
+import NoContacts from '../../assets/nocontacts.png';
 
 import './styles.css';
 
@@ -23,9 +25,9 @@ export default function Home() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Contatos</h1>
+        <h1>Contacts</h1>
         <p className="contact-length">({contatos.length})</p>
-        <Link style={style} to="/create"><FaPlus /> Adicionar Contato</Link>
+        <Link style={style} to="/create"><FaPlus /> Add Contact</Link>
       </div>
       {contatos.map((contato, index) => (
         <div key={index} className="container-contact">
@@ -33,6 +35,8 @@ export default function Home() {
           <p>{contato.email}</p>
         </div>
       ))}
+
+      {!contatos.length ? '' : <div className="no-contacts"><img src={NoContacts} alt="No Contacts" /></div>}
     </div>
   );
 }

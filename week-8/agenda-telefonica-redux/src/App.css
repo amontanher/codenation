@@ -48,7 +48,7 @@ body {
 .contact-length{
   font-size: 14px;
   color: gray;
-  margin: 3px 0 0 -160px;
+  margin: 3px 0 0 -200px;
 }
 
 .container-inputs{
@@ -66,4 +66,9 @@ body {
 .container-inputs label{
   margin-top: 10px;
   margin-bottom: 3px;
+}
+
+.no-contacts{
+  display: flex;
+  justify-content: center;
 }

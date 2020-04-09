@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContato } from '../../store/actions/contatoActions';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { FaArrowLeft, FaSave } from 'react-icons/fa';
 
 export default function Create() {
@@ -10,10 +10,8 @@ export default function Create() {
   const dispatch = useDispatch();
 
   const createContact = () => {
-    // const contato = { nome: nome, email: email };
-    // console.log(contato);
-    // dispatch(addContato(contato));
-    console.log("teste");
+    const contato = { nome: nome, email: email };
+    dispatch(addContato(contato));
   };
 
   const style = {
@@ -31,12 +29,12 @@ export default function Create() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Novo contato</h1>
-        <Link className="back-link" to="/"><FaArrowLeft /> Voltar</Link>
-        <Link style={style} to="#" onClick={createContact}><FaSave /> Criar Contato</Link>
+        <h1>New contact</h1>
+        <Link className="back-link" to="/"><FaArrowLeft />Return</Link>
+        <Link style={style} to="#" onClick={createContact}><FaSave /> Create Contact</Link>
       </div>
       <div className="container-inputs">
-        <label>Nome</label>
+        <label>Name</label>
         <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
 
         <label>E-mail</label>

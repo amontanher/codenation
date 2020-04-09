@@ -1,8 +1,5 @@
 const initialState = {
-  contatos: [
-    { nome: 'Alessandra', email: 'a@a.com' },
-    { nome: 'João', email: 'j@j.com' }
-  ]
+  contatos: [{}]
 };
 
 export default function userReducer(state = initialState, action) {
