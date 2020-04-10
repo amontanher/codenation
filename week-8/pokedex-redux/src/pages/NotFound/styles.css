@@ -1,0 +1,28 @@
+.nf-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 8px #888888;
+  margin-top: 100px;
+}
+
+.back-link {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #f22036;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+a,
+h3,
+p {
+  margin: 10px;
+}
