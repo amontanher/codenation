@@ -6,7 +6,7 @@ import './styles.css';
 
 export default function NotFound() {
     return <div className="nf-container">
-        <img src={NotFoundImg} />
+        <img src={NotFoundImg} alt="404"/>
         <h3>Uh-oh!</h3>
         <p>You look lost on your journey!</p>
         <Link className="back-link" to="/">Go Back Home</Link>
