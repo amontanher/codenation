@@ -7,7 +7,7 @@ export default function Pokemon({ id, name, url, type }) {
         <div className={`${type[0]}`} style={{borderRadius: '10px'}}>
             <div className="pokemon-container">
                 <img src={url} alt={name} />
-                <Link to="#" className="pokemon-link">{name}</Link>
+                <Link to={`/pokemon/${id}`} className="pokemon-link">{name}</Link>
             </div>
         </div>
     );
