@@ -1,0 +1,83 @@
+.pokemon-container{
+    width: 200px;
+    padding: 10px 0 10px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.pokemon-container img{
+    background-color: white;
+    border-radius: 100%;
+}
+
+.Steel {
+	background-color: #f4f4f4;
+}
+
+.Fire {
+	background-color: #FDDFDF;
+}
+
+.Grass {
+	background-color: #DEFDE0;
+}
+
+.Electric {
+	background-color: #FCF7DE;
+}
+
+.Water, .Ice {
+	background-color: #DEF3FD;
+}
+
+.Ground {
+	background-color: #f4e7da;
+}
+
+.Rock {
+	background-color: #d5d5d4;
+}
+
+.Fairy {
+	background-color: #fceaff;
+}
+
+.Poison {
+	background-color: #98d7a5;
+}
+
+.Bug {
+	background-color: #f8d5a3;
+}
+
+.Dragon {
+	background-color: #97b3e6;
+}
+
+.Psychic {
+	background-color: #eaeda1;
+}
+
+.Flying {
+	background-color: #F5F5F5;
+}
+
+.Fighting {
+	background-color: #E6E0D4;
+}
+
+.Normal {
+	background-color: #F5F5F5;
+}
+
+.Ghost{
+    background-color: #F1C5F1;
+}
