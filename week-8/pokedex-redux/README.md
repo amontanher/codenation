@@ -3,3 +3,7 @@ https://camo.githubusercontent.com/55add6eb6dafa52672470ab08622f2363d10a974/6874
 
 ## Consume DataSet
 https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json
+
+## Final Result
+
+![](src/assets/pokedexgif.gif)
