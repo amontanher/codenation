@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, Route } from 'react-router-dom';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './styles.css';
 
@@ -8,8 +10,6 @@ export default function Pokemon({ match }) {
     const { pokemons } = useSelector(({ pokemons }) => pokemons);
     const pokemonId = match.params.id;
     const pokemon = pokemons.pokemon[pokemonId];
-
-    console.log(pokemon);
 
     const handleEvolutionJoin = arr => {
         return (
@@ -36,7 +36,9 @@ export default function Pokemon({ match }) {
                         <li>Next Evolution: <span>{pokemon.next_evolution ? handleEvolutionJoin(pokemon.next_evolution) : '---'}</span></li>
                     </ul>
                 </div>
-                {/* <Link to="/">Voltar</Link> */}
+                <Link to="/">
+                    <FontAwesomeIcon size="lg" color="#787879" icon={faArrowLeft} />
+                </Link>
             </div>
         </div>
     )
