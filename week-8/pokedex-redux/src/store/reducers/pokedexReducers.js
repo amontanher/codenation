@@ -1,5 +1,7 @@
+import pokedex from '../../data/pokedex.json';
+
 const initialState = {
-    pokemons: [{}]
+    pokemons: pokedex
 };
 
 export default function pokedexReducer(state = initialState, action) {

@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import pokedex from '../../data/pokedex.json';
-import '../../../src/App.css';
+import React from 'react';
 import Pokemon from '../../components/Pokemon';
+import { useSelector } from 'react-redux';
+import '../../../src/App.css';
 
 export default function Home() {
-    const [loading, setLoading] = useState(true);
-    const [pokemons, setPokemons] = useState([{}]);
-
-    useEffect(() => {
-        //console.log(pokedex.pokemon);
-        setLoading(false);
-        setPokemons(pokedex.pokemon);
-    }, []);
+    const { pokemons } = useSelector(({ pokemons }) => pokemons);
 
     return (
         <div className="app">
             <h1>PokeDex</h1>
-            {loading && <div>Carregando...</div>}
             <div className="pokedex-container">
-                {!loading && pokemons.map((pokemon, index) => {
+                {pokemons.pokemon.map((pokemon, index) => {
                     return <Pokemon key={index}
                         url={pokemon.img}
                         name={pokemon.name}
