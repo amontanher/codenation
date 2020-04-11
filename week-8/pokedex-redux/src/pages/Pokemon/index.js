@@ -14,8 +14,8 @@ export default function Pokemon({ match }) {
     const handleEvolutionJoin = arr => {
         return (
             <Route>
-                {arr.map((pokemon, index)=>(
-                    <Link to={`/pokemon/${Number(pokemon.num)}`} key={index}>{pokemon.name}</Link>
+                {arr.map((pokemon, index) => (
+                    <Link to={`/pokemon/${Number(pokemon.num - 1)}`} key={index}>{pokemon.name}</Link>
                 ))}
             </Route>
         )
