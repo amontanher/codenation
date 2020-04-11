@@ -5,11 +5,8 @@ const initialState = {
 };
 
 export default function pokedexReducer(state = initialState, action) {
-    const { type, pokemonId } = action;
+    const { type } = action;
     switch (type) {
-        case 'ALL':
-            return state;
-
         default:
             return state;
     }
